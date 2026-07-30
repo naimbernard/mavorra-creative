@@ -1,0 +1,70 @@
+import type { Metadata } from "next";
+import { Container } from "@/components/ui/Container";
+import { ContactForm } from "@/components/contact/ContactForm";
+import { siteConfig } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "Contact — Start a Project",
+  description:
+    "Get in touch with Mavora Creative to start a branding, web design, or digital campaign project. Serving clients across the UK, Ghana, and the United States.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Mavora Creative",
+    description:
+      "Get in touch to start a branding, web design, or digital campaign project.",
+    url: "/contact",
+  },
+};
+
+export default function ContactPage() {
+  return (
+    <div data-header-theme="light" className="bg-cream pb-28 pt-36 sm:pt-44">
+      <Container className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
+        <div>
+          <p className="mb-4 text-xs uppercase font-tracking-wide text-gold-dark">
+            Get in touch
+          </p>
+          <h1 className="text-balance font-serif text-5xl leading-[1.08] text-ink sm:text-6xl">
+            Let&rsquo;s start a project.
+          </h1>
+          <p className="mt-6 max-w-md text-balance text-base leading-relaxed text-ink/65 sm:text-lg">
+            Tell us a little about what you&rsquo;re building. We reply to every
+            enquiry within one business day.
+          </p>
+
+          <dl className="mt-12 flex flex-col gap-6 border-t border-ink/10 pt-8 text-sm">
+            <div>
+              <dt className="text-ink/40">Email</dt>
+              <dd className="mt-1">
+                <a href={`mailto:${siteConfig.email}`} className="text-ink hover:text-gold-dark">
+                  {siteConfig.email}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-ink/40">Phone</dt>
+              <dd className="mt-1">
+                <a
+                  href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}
+                  className="text-ink hover:text-gold-dark"
+                >
+                  {siteConfig.phone}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-ink/40">Studio</dt>
+              <dd className="mt-1 text-ink/80">{siteConfig.address}</dd>
+            </div>
+            <div>
+              <dt className="text-ink/40">Reach</dt>
+              <dd className="mt-1 text-ink/80">{siteConfig.regionsTagline}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <ContactForm />
+      </Container>
+    </div>
+  );
+}
