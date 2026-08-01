@@ -77,10 +77,10 @@ export function Header() {
         style={{ height: HEADER_HEIGHT }}
       >
         <div className="mx-auto flex h-full max-w-8xl items-center justify-between px-5 sm:px-8 lg:px-12">
-          <Link href="/" className="relative z-10" aria-label="Mavora Creative — home">
+          <Link href="/" className="relative z-10" aria-label="Mavorra Creative — home">
             <Image
-              src={isDark ? "/logo/mavora-logo-white.png" : "/logo/mavora-logo-dark.png"}
-              alt="Mavora Creative"
+              src={isDark ? "/logo/mavorra-logo-white.png" : "/logo/mavorra-logo-dark.png"}
+              alt="Mavorra Creative"
               width={152}
               height={75}
               priority

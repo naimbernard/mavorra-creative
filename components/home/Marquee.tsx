@@ -1,12 +1,13 @@
 const ITEMS = [
   "Branding",
-  "Web Design & Development",
-  "Digital Campaigns",
-  "Motion & Content",
+  "Web Design",
+  "SEO",
+  "Lead Generation",
+  "Social Media",
   "United Kingdom",
   "Ghana",
   "United States",
-  "Brand Strategy",
+  "Marketing Strategy",
 ];
 
 export function Marquee() {

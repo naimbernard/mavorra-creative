@@ -32,20 +32,23 @@ function CardContent({ project, index }: { project: (typeof gallery)[number]; in
           className="object-cover"
           priority={index === 0}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
+        {/* Base tint so text stays legible over any cover image */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-ink/5" />
+        {/* Extra scrim behind the text block for guaranteed contrast */}
+        <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-ink via-ink/60 to-transparent" />
       </div>
 
       <div className="relative flex h-full flex-col justify-end p-6 sm:p-8">
-        <span className="mb-3 w-fit rounded-full border border-cream/30 px-3 py-1 text-[11px] uppercase font-tracking-wide text-cream/90">
+        <span className="mb-3 w-fit rounded-full border border-cream/40 bg-ink/40 px-3 py-1 text-[11px] uppercase font-tracking-wide text-cream backdrop-blur-sm">
           {project.category}
         </span>
-        <h3 className="font-serif text-2xl leading-tight text-cream sm:text-3xl">
+        <h3 className="font-serif text-2xl leading-tight text-cream drop-shadow-sm sm:text-3xl">
           {project.name}
         </h3>
-        <p className="mt-2 max-w-xs text-sm text-cream/75">{project.stat}</p>
+        <p className="mt-2 max-w-xs text-sm leading-relaxed text-cream/90">{project.highlight}</p>
         <Link
           href={`/work/${project.slug}`}
-          className="mt-5 inline-flex w-fit items-center gap-2 text-sm font-medium text-gold-light transition-colors hover:text-gold"
+          className="mt-5 inline-flex w-fit items-center gap-2 text-sm font-semibold text-gold-light underline decoration-transparent underline-offset-4 transition-all duration-300 hover:text-gold hover:decoration-gold"
         >
           View case study
           <span aria-hidden="true">→</span>
@@ -118,29 +121,31 @@ export function FeaturedWork() {
     <section data-header-theme="dark" className="relative bg-ink text-cream">
       {/* Desktop: pinned horizontal scroll gallery */}
       {isDesktop && !reducedMotion ? (
-        <div ref={pinRef} className="relative h-[100svh] overflow-hidden">
-          <Container className="absolute inset-x-0 top-16 z-10 lg:top-20">
+        <div ref={pinRef} className="relative flex h-[100svh] flex-col overflow-hidden bg-ink">
+          <Container className="relative z-10 shrink-0 pb-8 pt-28 lg:pb-10 lg:pt-32">
             <SectionHeading
               eyebrow="Featured work"
               title="Selected case studies"
               tone="onDark"
             />
           </Container>
-          <div
-            ref={trackRef}
-            className="absolute left-0 top-0 flex h-full items-center gap-7 pl-[6vw] pr-[10vw] will-change-transform"
-          >
-            {gallery.map((project, i) => (
-              <div
-                key={project.slug}
-                ref={(el) => {
-                  cardRefs.current[i] = el;
-                }}
-                className="relative h-[64vh] w-[62vw] shrink-0 overflow-hidden rounded-sm bg-ink/40 sm:h-[68vh] lg:w-[40vw] xl:w-[34vw]"
-              >
-                <CardContent project={project} index={i} />
-              </div>
-            ))}
+          <div className="relative min-h-0 flex-1 overflow-hidden">
+            <div
+              ref={trackRef}
+              className="absolute inset-0 flex h-full items-center gap-7 pl-[6vw] pr-[10vw] will-change-transform"
+            >
+              {gallery.map((project, i) => (
+                <div
+                  key={project.slug}
+                  ref={(el) => {
+                    cardRefs.current[i] = el;
+                  }}
+                  className="relative h-[calc(100%-2rem)] w-[62vw] shrink-0 overflow-hidden rounded-sm bg-ink/40 lg:w-[40vw] xl:w-[34vw]"
+                >
+                  <CardContent project={project} index={i} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ) : (
@@ -151,7 +156,7 @@ export function FeaturedWork() {
               eyebrow="Featured work"
               title="Selected case studies"
               tone="onDark"
-              className="mb-12"
+              className="mb-14 sm:mb-16"
             />
           </Container>
           <div className="flex snap-y snap-mandatory flex-col gap-6 px-5 sm:px-8">

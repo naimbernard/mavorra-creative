@@ -19,7 +19,7 @@ export const services: Service[] = [
     number: "01",
     title: "Branding & Identity",
     description:
-      "Strategy-led brand identities — naming, logo systems, colour and type, brand guidelines — built to travel across markets and hold up at any scale.",
+      "Strategy-led brand identities — naming, logo systems, colour and type, brand guidelines — built to make a business look trusted and professional from the first impression.",
     capabilities: [
       "Brand strategy & positioning",
       "Naming & verbal identity",
@@ -30,9 +30,9 @@ export const services: Service[] = [
   {
     id: "web",
     number: "02",
-    title: "Web Design & Development",
+    title: "Website Design",
     description:
-      "Fast, accessible, beautifully-crafted websites and product interfaces built on modern frameworks — designed to convert and engineered to last.",
+      "Fast, credible, conversion-focused websites built on modern frameworks — designed to earn trust in seconds and turn visitors into enquiries.",
     capabilities: [
       "Marketing & e-commerce websites",
       "Product & UI/UX design",
@@ -41,29 +41,81 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "digital",
+    id: "campaign-visuals",
     number: "03",
-    title: "Social & Digital Campaigns",
+    title: "Campaign Visuals",
     description:
-      "Platform-native campaigns that build audiences and drive measurable growth — from launch strategy through paid, organic, and lifecycle content.",
+      "Adverts, promotional graphics and campaign artwork built to a consistent visual system, so every launch looks considered rather than improvised.",
     capabilities: [
-      "Campaign strategy & planning",
-      "Paid social & performance creative",
-      "Content calendars & community",
-      "Analytics & reporting",
+      "Advert & promo design",
+      "Campaign concept direction",
+      "Print & digital artwork",
+      "Launch & seasonal creative",
     ],
   },
   {
-    id: "motion",
+    id: "social",
     number: "04",
-    title: "Motion & Content",
+    title: "Social Media Content",
     description:
-      "Film, motion design, and photography that give a brand its voice in movement — from product films to social-first content libraries.",
+      "Platform-native content and captions that build visibility and audience trust — from single posts to fully planned monthly calendars.",
     capabilities: [
-      "Brand & product film",
-      "Motion design & animation",
-      "Photography & art direction",
-      "Content production",
+      "Post & story design",
+      "Caption writing",
+      "Content calendars",
+      "Community-ready templates",
+    ],
+  },
+  {
+    id: "strategy",
+    number: "05",
+    title: "Marketing Strategy",
+    description:
+      "Clear, business-first marketing direction — positioning, messaging and campaign planning built around growth and customer attention, not trends.",
+    capabilities: [
+      "Positioning & messaging",
+      "Campaign planning",
+      "Audience & offer clarity",
+      "Marketing roadmaps",
+    ],
+  },
+  {
+    id: "seo",
+    number: "06",
+    title: "SEO Improvements",
+    description:
+      "Practical search and visibility improvements — content, structure and wording refined so the right customers can actually find the business.",
+    capabilities: [
+      "On-page SEO improvements",
+      "Search-friendly content wording",
+      "Local & regional visibility",
+      "Technical & structural checks",
+    ],
+  },
+  {
+    id: "lead-generation",
+    number: "07",
+    title: "Lead Generation Systems",
+    description:
+      "Enquiry-focused systems that turn visibility into leads — landing pages, forms and follow-up flows designed around how the business actually sells.",
+    capabilities: [
+      "Landing pages & offer pages",
+      "Enquiry forms & funnels",
+      "Follow-up & nurture flows",
+      "Conversion tracking",
+    ],
+  },
+  {
+    id: "crm",
+    number: "08",
+    title: "Custom CRM / Enquiry Systems",
+    description:
+      "Simple, custom-built systems for managing enquiries, listings and customer requirements — built around the business, not a bolted-on plugin.",
+    capabilities: [
+      "Enquiry & lead management",
+      "Custom dashboards",
+      "Workflow & handover setup",
+      "Integrations with existing tools",
     ],
   },
 ];

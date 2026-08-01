@@ -16,9 +16,32 @@ export function Services() {
       <Container>
         <SectionHeading
           eyebrow="What we do"
-          title="Full-service creative, without the hand-offs."
-          description="From first strategy session to shipped product, one team carries the work — so brand, web, and content never fall out of sync."
+          title="Marketing built around brand, visibility and enquiries."
+          description="Every capability below is available two ways: as Premium À La Carte Marketing built around a specific need, or bundled into a Marketing Buffet package for consistent monthly support."
         />
+
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6">
+          <div className="rounded-sm border border-ink/10 bg-ink/[0.03] p-6 sm:p-7">
+            <p className="text-xs uppercase font-tracking-wide text-gold-dark">Route 01</p>
+            <h3 className="mt-2 font-serif text-xl text-ink sm:text-2xl">
+              Premium À La Carte Marketing
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink/65">
+              Custom marketing services selected around your business need —
+              branding, websites, campaign visuals, content, strategy and SEO.
+            </p>
+          </div>
+          <div className="rounded-sm border border-ink/10 bg-ink/[0.03] p-6 sm:p-7">
+            <p className="text-xs uppercase font-tracking-wide text-gold-dark">Route 02</p>
+            <h3 className="mt-2 font-serif text-xl text-ink sm:text-2xl">
+              Marketing Buffet Packages
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink/65">
+              Affordable monthly marketing support for small businesses that
+              need consistent content, clean design and visibility.
+            </p>
+          </div>
+        </div>
 
         <motion.div
           variants={staggerContainer(0.12)}

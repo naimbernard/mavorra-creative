@@ -7,7 +7,7 @@ export function organizationJsonLd() {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo/mavora-logo-dark.png`,
+    logo: `${siteConfig.url}/logo/mavorra-logo-dark.png`,
     description: siteConfig.description,
     email: siteConfig.email,
     telephone: siteConfig.phone,

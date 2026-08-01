@@ -87,7 +87,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               ← All work
             </Link>
             <p className="mb-3 text-xs uppercase font-tracking-wide text-gold-light">
-              {project.category} · {project.location}
+              {project.topLabel}
             </p>
             <h1 className="max-w-3xl text-balance font-serif text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
               {project.name}
@@ -131,7 +131,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               <div className="rounded-sm border border-ink/10 bg-ink/[0.03] p-8 sm:p-10">
                 <p className="text-xs uppercase font-tracking-wide text-gold-dark">Result</p>
                 <p className="mt-4 text-balance font-serif text-3xl leading-tight text-ink sm:text-4xl">
-                  {project.stat}
+                  {project.resultHeadline}
                 </p>
                 <p className="mt-5 max-w-md text-balance text-base leading-relaxed text-ink/65">
                   {project.result}

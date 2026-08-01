@@ -32,8 +32,8 @@ export function Footer() {
         >
           <div>
             <Image
-              src="/logo/mavora-logo-white.png"
-              alt="Mavora Creative"
+              src="/logo/mavorra-logo-white.png"
+              alt="Mavorra Creative"
               width={180}
               height={89}
               className="h-9 w-auto"
@@ -84,6 +84,16 @@ export function Footer() {
               <li>
                 <a href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`} className="transition-colors hover:text-gold">
                   {siteConfig.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-gold"
+                >
+                  WhatsApp us
                 </a>
               </li>
               <li className="pt-2 text-cream/50">{siteConfig.regionsTagline}</li>

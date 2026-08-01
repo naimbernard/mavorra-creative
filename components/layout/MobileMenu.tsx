@@ -62,6 +62,14 @@ export function MobileMenu({
             <a href={`mailto:${siteConfig.email}`} className="hover:text-gold">
               {siteConfig.email}
             </a>
+            <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold"
+            >
+              WhatsApp: {siteConfig.phone}
+            </a>
             <p>{siteConfig.regionsTagline}</p>
             <div className="flex gap-5 pt-1">
               {siteConfig.social.map((s) => (

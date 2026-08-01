@@ -6,12 +6,12 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Our Work — Branding & Web Design Case Studies",
   description:
-    "Selected branding, web design, and digital campaign case studies from Mavora Creative, working with clients across the UK, Ghana, and the United States.",
+    "Selected branding, web design, SEO and marketing case studies from Mavorra Creative, working with clients across the UK, Ghana, and the United States.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Our Work — Mavora Creative",
+    title: "Our Work — Mavorra Creative",
     description:
-      "Selected branding, web design, and digital campaign case studies from Mavora Creative.",
+      "Selected branding, web design, SEO and marketing case studies from Mavorra Creative.",
     url: "/work",
   },
 };

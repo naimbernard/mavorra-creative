@@ -38,8 +38,8 @@ export function Hero() {
           className="mb-10"
         >
           <Image
-            src="/logo/mavora-logo-white.png"
-            alt="Mavora Creative"
+            src="/logo/mavorra-logo-white.png"
+            alt="Mavorra Creative"
             width={340}
             height={168}
             priority
@@ -53,11 +53,11 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.5, ease: EASE_EDITORIAL }}
           className="mb-6 text-[11px] uppercase text-gold-light sm:text-xs"
         >
-          Branding · Web · Digital — London · Accra · New York
+          Marketing · Branding · Websites · SEO — London · Accra · New York
         </motion.p>
 
         <h1 className="max-w-4xl text-balance font-serif text-[2.6rem] leading-[1.08] sm:text-6xl lg:text-7xl">
-          <RevealText text="We build brands worth remembering." delay={0.7} />
+          <RevealText text="Built to be noticed. Designed to be remembered." delay={0.7} />
         </h1>
 
         <motion.p
@@ -66,8 +66,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 1.5, ease: EASE_EDITORIAL }}
           className="mt-7 max-w-xl text-balance text-base leading-relaxed text-cream/70 sm:text-lg"
         >
-          An independent branding and digital design studio partnering with
-          ambitious companies across the UK, Ghana, and the United States.
+          Premium marketing, websites, campaign visuals and content systems
+          for businesses that want to look trusted, professional and ready to
+          grow.
         </motion.p>
 
         <motion.div
@@ -76,11 +77,11 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 1.7, ease: EASE_EDITORIAL }}
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
         >
-          <Button href="/work" variant="solid" tone="onDark">
-            View our work
+          <Button href="/contact" variant="solid" tone="onDark">
+            Start a project
           </Button>
-          <Button href="/contact" variant="ghost" tone="onDark">
-            Start a project →
+          <Button href="/#packages" variant="ghost" tone="onDark">
+            View packages →
           </Button>
         </motion.div>
       </div>

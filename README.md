@@ -1,9 +1,11 @@
-# Mavora Creative — Marketing Website
+# Mavorra Creative — Marketing Website
 
-Production-ready marketing site for Mavora Creative, a branding and digital
-design agency serving clients across the United Kingdom, Ghana, and the
-United States. Built with Next.js 14 (App Router), TypeScript, Tailwind CSS,
-Framer Motion, GSAP/ScrollTrigger, and Lenis smooth scrolling.
+Production-ready marketing site for Mavorra Creative, a marketing company
+helping businesses look trusted, professional and ready to grow through
+branding, websites, campaign visuals, content, SEO and lead generation
+systems — serving clients across the United Kingdom, Ghana, and the United
+States. Built with Next.js 14 (App Router), TypeScript, Tailwind CSS, Framer
+Motion, GSAP/ScrollTrigger, and Lenis smooth scrolling.
 
 ## Tech stack
 
@@ -48,10 +50,10 @@ cp .env.example .env.local
 
 Everything editorial lives in `/data`, fully commented:
 
-- **`data/site.ts`** — site name, URL, email, phone, address, nav links, social links.
-- **`data/services.ts`** — the four services shown on the homepage.
-- **`data/projects.ts`** — the 8 "Featured Work" case studies, used by the homepage gallery, `/work`, and `/work/[slug]`.
-- **`data/testimonials.ts`** — client quotes shown in the testimonial carousel, tagged by region.
+- **`data/site.ts`** — site name, URL, email, phone/WhatsApp, address, nav links, social links.
+- **`data/services.ts`** — the eight à la carte services shown on the homepage.
+- **`data/packages.ts`** — the four Marketing Buffet monthly package tiers.
+- **`data/projects.ts`** — the "Featured Work" case studies, used by the homepage gallery, `/work`, and `/work/[slug]`.
 
 To add or edit a case study, copy an existing object in `data/projects.ts`,
 give it a unique `slug`, and update the copy. The `/work/[slug]` page is
@@ -59,8 +61,8 @@ generated automatically for every entry.
 
 ### Swapping in real images
 
-- **Logos**: replace `/public/logo/mavora-logo-dark.png` (dark wordmark, for
-  light backgrounds) and `/public/logo/mavora-logo-white.png` (white
+- **Logos**: replace `/public/logo/mavorra-logo-dark.png` (dark wordmark, for
+  light backgrounds) and `/public/logo/mavorra-logo-white.png` (white
   wordmark, for dark backgrounds) — keep the same filenames and a transparent
   background, and the header's automatic light/dark logo swap keeps working
   with no code changes.
@@ -121,7 +123,7 @@ app/                  Routes (App Router): /, /work, /work/[slug], /about,
                        sitemap.ts, robots.ts
 components/
   home/                Homepage sections (Hero, Marquee, Services,
-                       FeaturedWork, Process, Testimonials, CtaBand)
+                       FeaturedWork, Packages, Process, CtaBand)
   layout/              Header, Footer, MobileMenu, SmoothScrollProvider,
                        PageTransition
   work/                Project card + case study building blocks

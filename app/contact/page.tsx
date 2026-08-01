@@ -6,12 +6,12 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact — Start a Project",
   description:
-    "Get in touch with Mavora Creative to start a branding, web design, or digital campaign project. Serving clients across the UK, Ghana, and the United States.",
+    "Get in touch with Mavorra Creative to start a branding, website, campaign, SEO or marketing project. Serving clients across the UK, Ghana, and the United States.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Mavora Creative",
+    title: "Contact Mavorra Creative",
     description:
-      "Get in touch to start a branding, web design, or digital campaign project.",
+      "Get in touch to start a branding, website, campaign, SEO or marketing project.",
     url: "/contact",
   },
 };
@@ -42,13 +42,21 @@ export default function ContactPage() {
               </dd>
             </div>
             <div>
-              <dt className="text-ink/40">Phone</dt>
-              <dd className="mt-1">
+              <dt className="text-ink/40">Phone / WhatsApp</dt>
+              <dd className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
                 <a
                   href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}
                   className="text-ink hover:text-gold-dark"
                 >
                   {siteConfig.phone}
+                </a>
+                <a
+                  href={siteConfig.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gold-dark hover:text-gold"
+                >
+                  Message on WhatsApp →
                 </a>
               </dd>
             </div>

@@ -8,23 +8,23 @@ import { ValuesGrid } from "@/components/about/ValuesGrid";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "About Us — Independent Creative Agency",
+  title: "About Us — Marketing & Brand Strategy Agency",
   description:
-    "Mavora Creative is an independent branding and digital design studio working with ambitious companies across the United Kingdom, Ghana, and the United States.",
+    "Mavorra Creative helps businesses look trusted, professional and ready to grow through branding, websites, campaign visuals, content, SEO and lead generation systems.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Mavora Creative",
+    title: "About Mavorra Creative",
     description:
-      "An independent branding and digital design studio working across the UK, Ghana, and the United States.",
+      "A marketing company built around brand image, visibility and lead generation — working across the UK, Ghana, and the United States.",
     url: "/about",
   },
 };
 
 const stats = [
-  { value: "8+", label: "Years in practice" },
-  { value: "40+", label: "Brands launched" },
+  { value: "2", label: "Service routes: à la carte & buffet" },
+  { value: "4", label: "Marketing Buffet package tiers" },
   { value: "3", label: "Countries served" },
-  { value: "94%", label: "Client return rate" },
+  { value: "1", label: "Team, no hand-offs" },
 ];
 
 const values = [
@@ -34,14 +34,14 @@ const values = [
       "Every visual decision traces back to a business reason. If we can't explain why, it doesn't ship.",
   },
   {
-    title: "Craft over templates",
+    title: "Built for attention and enquiries",
     description:
-      "We build systems bespoke to each brand — never a reskinned theme wearing your logo.",
+      "Brand and content work only earns its keep if it turns attention into enquiries — that's the standard we hold it to.",
   },
   {
-    title: "Global by default",
+    title: "Premium or affordable, never generic",
     description:
-      "Working across London, Accra, and New York keeps our thinking honest and our references wide.",
+      "Choose bespoke à la carte marketing or a Marketing Buffet package — either way, it's built around your business, not a template.",
   },
   {
     title: "Partners, not vendors",
@@ -67,15 +67,16 @@ export default function AboutPage() {
         />
         <Container className="relative">
           <p className="mb-5 text-xs uppercase font-tracking-wide text-gold-light">
-            About Mavora
+            About Mavorra
           </p>
           <h1 className="max-w-3xl text-balance font-serif text-4xl leading-[1.1] sm:text-6xl lg:text-7xl">
-            <RevealText text="An independent studio for brands with somewhere to be." />
+            <RevealText text="A marketing partner for businesses ready to grow." />
           </h1>
           <p className="mt-8 max-w-xl text-balance text-base leading-relaxed text-cream/70 sm:text-lg">
             We&rsquo;re a small, senior team of strategists, designers, and
-            engineers building brand and digital work for companies across
-            the United Kingdom, Ghana, and the United States.
+            engineers helping businesses across the United Kingdom, Ghana,
+            and the United States look trusted, professional, and ready to
+            grow.
           </p>
         </Container>
       </section>

@@ -26,10 +26,12 @@ const budgets = [
 
 const projectTypes = [
   "Branding & Identity",
-  "Web Design & Development",
-  "Social & Digital Campaign",
-  "Motion & Content",
-  "Full Rebrand",
+  "Website Design",
+  "Campaign Visuals",
+  "Social Media Content",
+  "SEO Improvements",
+  "Lead Generation / CRM",
+  "Marketing Buffet Package",
   "Other",
 ];
 
@@ -198,13 +200,23 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <button
-        type="submit"
-        disabled={status === "submitting"}
-        className="min-h-[44px] w-fit rounded-full bg-ink px-8 py-3.5 text-sm font-semibold tracking-wide text-cream transition-colors hover:bg-gold disabled:opacity-60"
-      >
-        {status === "submitting" ? "Sending…" : "Send message"}
-      </button>
+      <div className="flex flex-wrap items-center gap-5">
+        <button
+          type="submit"
+          disabled={status === "submitting"}
+          className="min-h-[44px] w-fit rounded-full bg-ink px-8 py-3.5 text-sm font-semibold tracking-wide text-cream transition-colors hover:bg-gold disabled:opacity-60"
+        >
+          {status === "submitting" ? "Sending…" : "Send message"}
+        </button>
+        <a
+          href={siteConfig.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-medium text-ink/60 underline underline-offset-4 transition-colors hover:text-gold-dark"
+        >
+          or message us on WhatsApp
+        </a>
+      </div>
     </motion.form>
   );
 }

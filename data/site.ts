@@ -5,28 +5,31 @@
 // ---------------------------------------------------------------------------
 
 export const siteConfig = {
-  name: "Mavora Creative",
-  shortName: "Mavora",
+  name: "Mavorra Creative",
+  shortName: "Mavorra",
+  tagline: "Built to be noticed. Designed to be remembered.",
   // Used to build canonical URLs, sitemap, OG tags. Set this to your real
   // production domain before deploying.
-  url: "https://www.mavoracreative.com",
+  url: "https://www.mavorracreative.com",
   description:
-    "Mavora Creative is a full-service branding, web design, and digital creative agency serving clients across the United Kingdom, Ghana, and the United States.",
-  email: "hello@mavoracreative.com",
-  phone: "+44 20 7946 0958",
+    "Mavorra Creative is a marketing company that helps businesses look trusted, professional and ready to grow — through branding, websites, campaign visuals, content, SEO and lead generation systems.",
+  email: "hello@mavorracreative.com",
+  phone: "+44 7424 495918",
+  whatsapp: "https://wa.me/447424495918",
   regions: ["United Kingdom", "Ghana", "United States"] as const,
   regionsTagline: "Serving clients across the UK, Ghana & the US",
   address: "71–75 Shelton Street, London, WC2H 9JQ, United Kingdom",
   social: [
-    { label: "Instagram", href: "https://instagram.com/mavoracreative" },
-    { label: "LinkedIn", href: "https://linkedin.com/company/mavoracreative" },
-    { label: "X", href: "https://x.com/mavoracreative" },
-    { label: "Behance", href: "https://behance.net/mavoracreative" },
+    { label: "Instagram", href: "https://instagram.com/mavorracreative" },
+    { label: "LinkedIn", href: "https://linkedin.com/company/mavorracreative" },
+    { label: "X", href: "https://x.com/mavorracreative" },
+    { label: "Behance", href: "https://behance.net/mavorracreative" },
   ],
 };
 
 export const navLinks = [
   { label: "Work", href: "/work" },
+  { label: "Packages", href: "/#packages" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
