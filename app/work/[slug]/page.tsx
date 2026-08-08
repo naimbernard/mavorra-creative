@@ -100,6 +100,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             {[
               { label: "Client", value: project.client },
               { label: "Location", value: project.location },
+              ...(project.website ? [{ label: "Website", value: project.website }] : []),
               { label: "Year", value: project.year },
               { label: "Services", value: project.services.join(", ") },
             ].map((item) => (
@@ -129,7 +130,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             </div>
             <div className="lg:pt-1">
               <div className="rounded-sm border border-ink/10 bg-ink/[0.03] p-8 sm:p-10">
-                <p className="text-xs uppercase font-tracking-wide text-gold-dark">Result</p>
+                <p className="text-xs uppercase font-tracking-wide text-gold-dark">
+                  {project.resultLabel ?? "Result"}
+                </p>
                 <p className="mt-4 text-balance font-serif text-3xl leading-tight text-ink sm:text-4xl">
                   {project.resultHeadline}
                 </p>

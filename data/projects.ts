@@ -18,12 +18,14 @@ export interface Project {
   name: string;
   client: string;
   location: string;
+  website?: string;
   region: Region;
   topLabel: string;
   category: string;
   services: string[];
   year: string;
   resultHeadline: string;
+  resultLabel?: string;
   highlight: string;
   summary: string;
   challenge: string;
@@ -39,7 +41,7 @@ export const projects: Project[] = [
     slug: "killians-drink-soda",
     name: "Killian’s Drink Soda",
     client: "Killian’s Drink Soda",
-    location: "UK / Ghana",
+    location: "UK / Ghana / Switzerland",
     region: "United Kingdom",
     topLabel: "SEO & MARKETING IMPROVEMENTS · BEVERAGE BRAND",
     category: "SEO & Marketing",
@@ -99,6 +101,76 @@ export const projects: Project[] = [
     gallery: [
       { src: "/work/ab-realty/detail-1.jpg", alt: "AB Realty website interface detail, abstract composition" },
       { src: "/work/ab-realty/detail-2.jpg", alt: "AB Realty lead system detail, abstract composition" },
+    ],
+    featured: true,
+  },
+  {
+    slug: "synergy-human-factors",
+    name: "Synergy Human Factors",
+    client: "Synergy Human Factors",
+    location: "Bristol, UK",
+    website: "synergyhumanfactors.com",
+    region: "United Kingdom",
+    topLabel: "WEB DESIGN · SEO · MARKETING MATERIALS · HUMAN FACTORS CONSULTANCY",
+    category: "Web Design & Marketing",
+    services: [
+      "Web design",
+      "SEO improvements",
+      "Marketing materials",
+      "Brand messaging",
+    ],
+    year: "2026",
+    resultHeadline: "A clearer, more credible digital presence for a specialist consultancy",
+    highlight:
+      "A refreshed website and stronger marketing materials for a specialist human factors consultancy.",
+    summary:
+      "A redesigned website, sharper SEO and clearer marketing materials for a human factors consultancy.",
+    challenge:
+      "Synergy Human Factors offers specialist, credibility-led consultancy work, but its website and marketing materials weren’t reflecting the expertise behind the business. The brand needed a clearer, more professional online presence, stronger search visibility and materials that could support client-facing conversations.",
+    approach:
+      "We redesigned the website to better communicate Synergy Human Factors’ expertise and credibility, strengthened on-page SEO to improve search visibility, and developed marketing materials that gave the consultancy clearer, more consistent messaging across its client-facing touchpoints.",
+    result:
+      "Mavorra Creative helped Synergy Human Factors present a more professional, credible online presence, with improved search visibility and marketing materials better suited to a specialist consultancy audience.",
+    cover: { src: "/work/synergy-human-factors/cover.jpg", alt: "Synergy Human Factors website and marketing cover artwork, abstract composition" },
+    gallery: [
+      { src: "/work/synergy-human-factors/detail-1.jpg", alt: "Synergy Human Factors website design detail, abstract composition" },
+      { src: "/work/synergy-human-factors/detail-2.jpg", alt: "Synergy Human Factors marketing materials detail, abstract composition" },
+    ],
+    featured: true,
+  },
+  {
+    slug: "bernard-builders",
+    name: "Bernard Builders",
+    client: "Bernard Builders",
+    location: "Cape Coast, Ghana",
+    website: "bernard-builders.com",
+    region: "Ghana",
+    topLabel: "BUSINESS DEVELOPMENT & GROWTH MARKETING · CONSTRUCTION",
+    category: "Business Development & Growth Marketing",
+    services: [
+      "Business development",
+      "Lead generation",
+      "Brand positioning",
+      "Market research",
+      "Content creation",
+    ],
+    year: "2025",
+    resultHeadline: "An ongoing growth partnership, extended after hitting KPI targets",
+    resultLabel: "Status",
+    highlight:
+      "An ongoing growth partnership running lead generation, brand positioning and content for a construction business in Ghana.",
+    summary:
+      "An ongoing business development and growth marketing partnership for a construction business in Cape Coast, Ghana.",
+    challenge:
+      "Bernard Builders needed a structured growth engine rather than one-off marketing — consistent lead flow, a clearer market position, and content that supported a longer sales cycle in the construction and builders space.",
+    approach:
+      "Mavorra Creative was brought on as an ongoing partner rather than for a single project — running continuous lead generation, repositioning the brand for target market segments, conducting market research to guide strategy, and producing ongoing content to support the sales pipeline.",
+    result:
+      "Bernard Builders is a 2-year retained partnership, with an extension already agreed following delivery against the agreed 2-year KPI targets. Mavorra Creative continues to run lead generation, brand positioning, market research and content creation as an ongoing growth partner.",
+    cover: { src: "/work/bernard-builders/cover.jpg", alt: "Bernard Builders growth marketing cover artwork, abstract composition (placeholder — pending real project asset)" },
+    gallery: [
+      { src: "/work/bernard-builders/detail-1.jpg", alt: "Bernard Builders lead generation detail, abstract composition (placeholder — pending real project asset)" },
+      { src: "/work/bernard-builders/detail-2.jpg", alt: "Bernard Builders brand positioning detail, abstract composition (placeholder — pending real project asset)" },
     ],
     featured: true,
   },

@@ -35,6 +35,11 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
                 {project.name}
               </h3>
               <p className="mt-1 text-sm text-ink/55">{project.category}</p>
+              {project.website && (
+                <p className="mt-1 text-xs text-ink/40">
+                  {project.location} · {project.website}
+                </p>
+              )}
             </div>
             <span className="shrink-0 pt-1 text-sm text-ink/40">{project.year}</span>
           </div>

@@ -43,6 +43,10 @@ export function creativeWorkJsonLd(project: Project) {
       "@type": "Place",
       name: project.location,
     },
+    areaServed: {
+      "@type": "Country",
+      name: project.region,
+    },
   };
 }
 
