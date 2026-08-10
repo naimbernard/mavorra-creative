@@ -7,7 +7,17 @@ import { Magnetic } from "@/components/ui/Magnetic";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import type { Project } from "@/data/projects";
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+export function ProjectCard({
+  project,
+  index,
+  headingLevel = "h3",
+}: {
+  project: Project;
+  index: number;
+  headingLevel?: "h2" | "h3";
+}) {
+  const Heading = headingLevel;
+
   return (
     <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewportOnce}>
       <Magnetic strength={0.06}>
@@ -31,9 +41,9 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           </div>
           <div className="mt-5 flex items-start justify-between gap-4">
             <div>
-              <h3 className="font-serif text-2xl leading-tight text-ink transition-colors group-hover:text-gold-dark">
+              <Heading className="font-serif text-2xl leading-tight text-ink transition-colors group-hover:text-gold-dark">
                 {project.name}
-              </h3>
+              </Heading>
               <p className="mt-1 text-sm text-ink/55">{project.category}</p>
               {project.website && (
                 <p className="mt-1 text-xs text-ink/40">

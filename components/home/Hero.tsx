@@ -57,6 +57,10 @@ export function Hero() {
         </motion.p>
 
         <h1 className="max-w-4xl text-balance font-serif text-[2.6rem] leading-[1.08] sm:text-6xl lg:text-7xl">
+          <span className="sr-only">
+            Mavorra Creative — branding, web design and marketing agency serving the UK, Ghana
+            and the US.{" "}
+          </span>
           <RevealText text="Built to be noticed. Designed to be remembered." delay={0.7} />
         </h1>
 

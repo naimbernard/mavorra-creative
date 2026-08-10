@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/legal/LegalLayout";
 import { siteConfig } from "@/data/site";
 
+const termsTitle = "Terms of Service";
+const termsDescription = `The terms governing your use of the ${siteConfig.name} website.`;
+
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: `The terms governing your use of the ${siteConfig.name} website.`,
+  title: termsTitle,
+  description: termsDescription,
   alternates: { canonical: "/terms" },
+  twitter: {
+    card: "summary",
+    title: termsTitle,
+    description: termsDescription,
+  },
 };
 
 export default function TermsPage() {

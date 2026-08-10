@@ -10,7 +10,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Marketing, Branding & Web Design Agency | UK, Ghana & US`,
+    default: `${siteConfig.name} — Branding, Web & SEO Agency | UK/Ghana/US`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

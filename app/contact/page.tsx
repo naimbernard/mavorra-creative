@@ -3,16 +3,26 @@ import { Container } from "@/components/ui/Container";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { siteConfig } from "@/data/site";
 
+const contactTitle = "Contact — Start a Project";
+const contactDescription =
+  "Get in touch with Mavorra Creative to start a branding, website, campaign, SEO or marketing project. Serving clients across the UK, Ghana, and the United States.";
+
 export const metadata: Metadata = {
-  title: "Contact — Start a Project",
-  description:
-    "Get in touch with Mavorra Creative to start a branding, website, campaign, SEO or marketing project. Serving clients across the UK, Ghana, and the United States.",
+  title: contactTitle,
+  description: contactDescription,
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Mavorra Creative",
     description:
       "Get in touch to start a branding, website, campaign, SEO or marketing project.",
     url: "/contact",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: contactTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: contactTitle,
+    description: contactDescription,
+    images: ["/og-image.png"],
   },
 };
 
@@ -28,7 +38,8 @@ export default function ContactPage() {
             Let&rsquo;s start a project.
           </h1>
           <p className="mt-6 max-w-md text-balance text-base leading-relaxed text-ink/65 sm:text-lg">
-            Tell us a little about what you&rsquo;re building. We reply to every
+            Tell us a little about what you&rsquo;re building. We work with
+            businesses across the UK, Ghana and the US, and reply to every
             enquiry within one business day.
           </p>
 

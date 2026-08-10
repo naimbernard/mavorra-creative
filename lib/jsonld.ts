@@ -1,13 +1,15 @@
 import { siteConfig } from "@/data/site";
+import { services } from "@/data/services";
 import type { Project } from "@/data/projects";
 
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "ProfessionalService"],
     name: siteConfig.name,
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo/mavorra-logo-dark.png`,
+    image: `${siteConfig.url}/og-image.png`,
     description: siteConfig.description,
     email: siteConfig.email,
     telephone: siteConfig.phone,
@@ -16,6 +18,7 @@ export function organizationJsonLd() {
       { "@type": "Country", name: "Ghana" },
       { "@type": "Country", name: "United States" },
     ],
+    serviceType: services.map((s) => s.title),
     sameAs: siteConfig.social.map((s) => s.href),
     address: {
       "@type": "PostalAddress",
@@ -29,7 +32,7 @@ export function creativeWorkJsonLd(project: Project) {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: project.name,
-    description: project.summary,
+    description: project.seoDescription ?? project.summary,
     url: `${siteConfig.url}/work/${project.slug}`,
     image: `${siteConfig.url}${project.cover.src}`,
     creator: {
@@ -37,7 +40,11 @@ export function creativeWorkJsonLd(project: Project) {
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    about: project.category,
+    about: {
+      "@type": "Thing",
+      name: project.category,
+    },
+    keywords: project.services.join(", "),
     datePublished: `${project.year}-01-01`,
     locationCreated: {
       "@type": "Place",

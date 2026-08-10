@@ -7,16 +7,26 @@ import { StatsGrid } from "@/components/about/StatsGrid";
 import { ValuesGrid } from "@/components/about/ValuesGrid";
 import { siteConfig } from "@/data/site";
 
+const aboutTitle = "About Us — Marketing & Brand Strategy Agency";
+const aboutDescription =
+  "Mavorra Creative helps businesses look trusted, professional and ready to grow through branding, websites, campaign visuals, content, SEO and lead generation systems.";
+
 export const metadata: Metadata = {
-  title: "About Us — Marketing & Brand Strategy Agency",
-  description:
-    "Mavorra Creative helps businesses look trusted, professional and ready to grow through branding, websites, campaign visuals, content, SEO and lead generation systems.",
+  title: aboutTitle,
+  description: aboutDescription,
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Mavorra Creative",
     description:
       "A marketing company built around brand image, visibility and lead generation — working across the UK, Ghana, and the United States.",
     url: "/about",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: aboutTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: aboutTitle,
+    description: aboutDescription,
+    images: ["/og-image.png"],
   },
 };
 

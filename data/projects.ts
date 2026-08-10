@@ -11,7 +11,7 @@
 // /public/work/<slug>/ and keep the same filenames — no code changes needed.
 // ---------------------------------------------------------------------------
 
-export type Region = "United Kingdom" | "Ghana" | "United States" | "India";
+export type Region = "United Kingdom" | "Ghana" | "United States" | "India" | "Switzerland";
 
 export interface Project {
   slug: string;
@@ -22,6 +22,10 @@ export interface Project {
   region: Region;
   topLabel: string;
   category: string;
+  /** 50-60 char, unique per-project SEO title. Falls back to `${name} — ${category} Case Study` if omitted. */
+  seoTitle?: string;
+  /** 150-160 char, unique per-project meta description referencing industry + location. Falls back to `summary` if omitted. */
+  seoDescription?: string;
   services: string[];
   year: string;
   resultHeadline: string;
@@ -41,10 +45,13 @@ export const projects: Project[] = [
     slug: "killians-drink-soda",
     name: "Killian’s Drink Soda",
     client: "Killian’s Drink Soda",
-    location: "UK / Ghana / Switzerland",
-    region: "United Kingdom",
+    location: "Switzerland",
+    region: "Switzerland",
     topLabel: "SEO & MARKETING IMPROVEMENTS · BEVERAGE BRAND",
     category: "SEO & Marketing",
+    seoTitle: "Killian's Drink Soda — SEO & Marketing Case Study",
+    seoDescription:
+      "SEO and marketing case study for Killian's Drink Soda, a sugar-free sparkling drink brand — sharper messaging, search visibility and social content direction.",
     services: [
       "SEO improvements",
       "Marketing strategy",
@@ -78,6 +85,9 @@ export const projects: Project[] = [
     region: "India",
     topLabel: "WEB DESIGN · SOCIAL MEDIA · CUSTOM CRM · LEAD GENERATION",
     category: "Web Design & Lead Systems",
+    seoTitle: "AB Realty — Web Design & Lead Systems Case Study",
+    seoDescription:
+      "Web design, brand image and lead generation case study for AB Realty, a real estate business in Goa, India — custom CRM, social content, digital presence.",
     services: [
       "Web design",
       "Social media posts",
@@ -113,6 +123,9 @@ export const projects: Project[] = [
     region: "United Kingdom",
     topLabel: "WEB DESIGN · SEO · MARKETING MATERIALS · HUMAN FACTORS CONSULTANCY",
     category: "Web Design & Marketing",
+    seoTitle: "Synergy Human Factors — Web Design & SEO Case Study | UK",
+    seoDescription:
+      "How Mavorra Creative redesigned the website, improved SEO and sharpened marketing for Synergy Human Factors, a human factors consultancy in Bristol, UK.",
     services: [
       "Web design",
       "SEO improvements",
@@ -147,6 +160,9 @@ export const projects: Project[] = [
     region: "Ghana",
     topLabel: "BUSINESS DEVELOPMENT & GROWTH MARKETING · CONSTRUCTION",
     category: "Business Development & Growth Marketing",
+    seoTitle: "Bernard Builders — Construction Brand Growth Case Study",
+    seoDescription:
+      "An ongoing growth marketing partnership with Bernard Builders, a construction business in Cape Coast, Ghana — lead generation, positioning, market research.",
     services: [
       "Business development",
       "Lead generation",

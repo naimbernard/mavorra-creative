@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import { LegalLayout } from "@/components/legal/LegalLayout";
 import { siteConfig } from "@/data/site";
 
+const privacyTitle = "Privacy Policy";
+const privacyDescription = `How ${siteConfig.name} collects, uses, and protects your personal data.`;
+
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: `How ${siteConfig.name} collects, uses, and protects your personal data.`,
+  title: privacyTitle,
+  description: privacyDescription,
   alternates: { canonical: "/privacy" },
+  twitter: {
+    card: "summary",
+    title: privacyTitle,
+    description: privacyDescription,
+  },
 };
 
 export default function PrivacyPage() {

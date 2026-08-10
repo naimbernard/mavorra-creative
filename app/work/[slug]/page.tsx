@@ -20,20 +20,24 @@ export function generateMetadata({
   const project = getProjectBySlug(params.slug);
   if (!project) return {};
 
+  const title = project.seoTitle ?? `${project.name} — ${project.category} Case Study`;
+  const description = project.seoDescription ?? project.summary;
+
   return {
-    title: `${project.name} — ${project.category} Case Study`,
-    description: project.summary,
+    title,
+    description,
     alternates: { canonical: `/work/${project.slug}` },
     openGraph: {
+      type: "article",
       title: `${project.name} — ${siteConfig.name}`,
-      description: project.summary,
+      description,
       url: `/work/${project.slug}`,
       images: [{ url: project.cover.src, width: 1400, height: 1750, alt: project.cover.alt }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.name} — ${siteConfig.name}`,
-      description: project.summary,
+      description,
       images: [project.cover.src],
     },
   };
@@ -90,6 +94,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               {project.topLabel}
             </p>
             <h1 className="max-w-3xl text-balance font-serif text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
+              <span className="sr-only">
+                {project.category} case study for {project.name}, {project.location} —{" "}
+              </span>
               {project.name}
             </h1>
           </Container>
