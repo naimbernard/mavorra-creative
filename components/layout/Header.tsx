@@ -81,10 +81,10 @@ export function Header() {
             <Image
               src={isDark ? "/logo/mavorra-logo-white.png" : "/logo/mavorra-logo-dark.png"}
               alt="Mavorra Creative"
-              width={152}
-              height={75}
+              width={210}
+              height={104}
               priority
-              className="h-7 w-auto transition-opacity duration-300 sm:h-8"
+              className="h-9 w-auto transition-opacity duration-300 sm:h-12"
             />
           </Link>
 
