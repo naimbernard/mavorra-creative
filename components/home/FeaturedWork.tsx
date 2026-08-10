@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "@/components/ui/Container";
@@ -17,11 +18,16 @@ gsap.registerPlugin(ScrollTrigger);
 const gallery = projects.filter((p) => p.featured);
 
 function CardContent({ project, index }: { project: (typeof gallery)[number]; index: number }) {
+  const isContain = project.cover.fit === "contain";
+
   return (
     <>
       <div
         data-card-image
-        className="absolute inset-0 overflow-hidden rounded-sm"
+        className={clsx(
+          "absolute inset-0 overflow-hidden rounded-sm",
+          isContain && "bg-black"
+        )}
         style={{ clipPath: "inset(0 0 0 0)" }}
       >
         <Image
@@ -29,7 +35,7 @@ function CardContent({ project, index }: { project: (typeof gallery)[number]; in
           alt={project.cover.alt}
           fill
           sizes="(min-width: 1280px) 36vw, (min-width: 768px) 46vw, 90vw"
-          className="object-cover"
+          className={isContain ? "object-contain" : "object-cover"}
           priority={index === 0}
         />
         {/* Base tint so text stays legible over any cover image */}

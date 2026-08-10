@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import clsx from "clsx";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { getAdjacentProjects, getProjectBySlug, projects } from "@/data/projects";
@@ -56,6 +57,8 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   if (!project) notFound();
 
   const { next } = getAdjacentProjects(project.slug);
+  const heroImg = project.heroImage ?? project.cover;
+  const isContain = heroImg.fit === "contain";
 
   return (
     <>
@@ -80,15 +83,18 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       <article>
         <header
           data-header-theme="dark"
-          className="relative flex min-h-[85svh] items-end overflow-hidden bg-ink text-cream"
+          className={clsx(
+            "relative flex min-h-[85svh] items-end overflow-hidden text-cream",
+            isContain ? "bg-black" : "bg-ink"
+          )}
         >
           <Image
-            src={(project.heroImage ?? project.cover).src}
-            alt={(project.heroImage ?? project.cover).alt}
+            src={heroImg.src}
+            alt={heroImg.alt}
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className={isContain ? "object-contain" : "object-cover"}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
           <Container className="relative pb-14 pt-40 sm:pb-20">

@@ -13,6 +13,17 @@
 
 export type Region = "United Kingdom" | "Ghana" | "United States" | "India" | "Switzerland";
 
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  /**
+   * Defaults to "cover" (fills the frame, cropping edges as needed). Use
+   * "contain" for images — like logo lockups — where nothing can be
+   * cropped; the frame is filled with `bg-black` behind it instead.
+   */
+  fit?: "cover" | "contain";
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -35,9 +46,9 @@ export interface Project {
   challenge: string;
   approach: string;
   result: string;
-  cover: { src: string; alt: string };
+  cover: ProjectImage;
   /** Used for the case-study detail page's full-width hero background. Falls back to `cover` if omitted. */
-  heroImage?: { src: string; alt: string };
+  heroImage?: ProjectImage;
   gallery: { src: string; alt: string }[];
   featured: boolean;
 }
@@ -188,10 +199,12 @@ export const projects: Project[] = [
     cover: {
       src: "/work/bernard-builders/cover.png",
       alt: "Bernard Builders logo mark — a gold \"BB\" monogram inside a circular emblem on a black background",
+      fit: "contain",
     },
     heroImage: {
       src: "/work/bernard-builders/hero.png",
       alt: "Bernard Builders & Real Estate full gold logo lockup on a black background",
+      fit: "contain",
     },
     gallery: [
       { src: "/work/bernard-builders/detail-1.jpg", alt: "Bernard Builders lead generation detail, abstract composition (placeholder — pending real project asset)" },

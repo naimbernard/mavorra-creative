@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 import type { Project } from "@/data/projects";
@@ -17,18 +18,27 @@ export function ProjectCard({
   headingLevel?: "h2" | "h3";
 }) {
   const Heading = headingLevel;
+  const isContain = project.cover.fit === "contain";
 
   return (
     <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewportOnce}>
       <Magnetic strength={0.06}>
         <Link href={`/work/${project.slug}`} className="group block">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-ink/5">
+          <div
+            className={clsx(
+              "relative aspect-[4/5] overflow-hidden rounded-sm",
+              isContain ? "bg-black" : "bg-ink/5"
+            )}
+          >
             <Image
               src={project.cover.src}
               alt={project.cover.alt}
               fill
               sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
-              className="object-cover transition-transform duration-700 ease-editorial group-hover:scale-105"
+              className={clsx(
+                "transition-transform duration-700 ease-editorial group-hover:scale-105",
+                isContain ? "object-contain" : "object-cover"
+              )}
               priority={index < 2}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
