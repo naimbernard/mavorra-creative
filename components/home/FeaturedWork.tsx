@@ -26,7 +26,7 @@ function CardContent({ project, index }: { project: (typeof gallery)[number]; in
         data-card-image
         className={clsx(
           "absolute inset-0 overflow-hidden rounded-sm",
-          isContain && "bg-black"
+          isContain && (project.cover.bg ?? "bg-black")
         )}
         style={{ clipPath: "inset(0 0 0 0)" }}
       >

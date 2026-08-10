@@ -19,9 +19,11 @@ export interface ProjectImage {
   /**
    * Defaults to "cover" (fills the frame, cropping edges as needed). Use
    * "contain" for images — like logo lockups — where nothing can be
-   * cropped; the frame is filled with `bg-black` behind it instead.
+   * cropped; the frame is filled with `bg` behind it instead.
    */
   fit?: "cover" | "contain";
+  /** Backdrop Tailwind class shown behind a "contain"-fit image. Defaults to "bg-black". */
+  bg?: string;
 }
 
 export interface Project {
@@ -120,7 +122,18 @@ export const projects: Project[] = [
       "We developed a more professional digital direction for AB Realty across web design, social media content and lead generation. The work included improving the brand’s online image, creating property-focused marketing content, designing a stronger website experience and planning a custom CRM-style system to help manage enquiries, listings and buyer requirements more efficiently.",
     result:
       "Mavorra Creative helped AB Realty move towards a more professional, organised and lead-focused online presence, connecting brand image, website structure, social media content and enquiry management into one clearer business system.",
-    cover: { src: "/work/ab-realty/cover.jpg", alt: "AB Realty web design and brand cover artwork, abstract composition" },
+    cover: {
+      src: "/work/ab-realty/cover.png",
+      alt: "AB Realty logo — an \"A/B\" monogram above the wordmark \"AB Realty, real estate agency\" on white",
+      fit: "contain",
+      bg: "bg-white",
+    },
+    heroImage: {
+      src: "/work/ab-realty/hero.png",
+      alt: "AB Realty logo — an \"A/B\" monogram above the wordmark \"AB Realty, real estate agency\" on white",
+      fit: "contain",
+      bg: "bg-white",
+    },
     gallery: [
       { src: "/work/ab-realty/detail-1.jpg", alt: "AB Realty website interface detail, abstract composition" },
       { src: "/work/ab-realty/detail-2.jpg", alt: "AB Realty lead system detail, abstract composition" },

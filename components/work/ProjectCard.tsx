@@ -27,7 +27,7 @@ export function ProjectCard({
           <div
             className={clsx(
               "relative aspect-[4/5] overflow-hidden rounded-sm",
-              isContain ? "bg-black" : "bg-ink/5"
+              isContain ? project.cover.bg ?? "bg-black" : "bg-ink/5"
             )}
           >
             <Image

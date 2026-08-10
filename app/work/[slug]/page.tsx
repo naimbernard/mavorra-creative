@@ -59,6 +59,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   const { next } = getAdjacentProjects(project.slug);
   const heroImg = project.heroImage ?? project.cover;
   const isContain = heroImg.fit === "contain";
+  // A light contain backdrop (e.g. a white logo) needs the sticky nav to
+  // switch to dark-on-light text, since the top of the hero is now light.
+  const heroHeaderTheme = isContain && heroImg.bg === "bg-white" ? "light" : "dark";
 
   return (
     <>
@@ -82,10 +85,10 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
       <article>
         <header
-          data-header-theme="dark"
+          data-header-theme={heroHeaderTheme}
           className={clsx(
             "relative flex min-h-[85svh] items-end overflow-hidden text-cream",
-            isContain ? "bg-black" : "bg-ink"
+            isContain ? heroImg.bg ?? "bg-black" : "bg-ink"
           )}
         >
           <Image
