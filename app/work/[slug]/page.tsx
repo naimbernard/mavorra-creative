@@ -22,6 +22,7 @@ export function generateMetadata({
 
   const title = project.seoTitle ?? `${project.name} — ${project.category} Case Study`;
   const description = project.seoDescription ?? project.summary;
+  const shareImage = project.heroImage ?? project.cover;
 
   return {
     title,
@@ -32,13 +33,20 @@ export function generateMetadata({
       title: `${project.name} — ${siteConfig.name}`,
       description,
       url: `/work/${project.slug}`,
-      images: [{ url: project.cover.src, width: 1400, height: 1750, alt: project.cover.alt }],
+      images: [
+        {
+          url: shareImage.src,
+          width: project.heroImage ? 1200 : 1400,
+          height: project.heroImage ? 1200 : 1750,
+          alt: shareImage.alt,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.name} — ${siteConfig.name}`,
       description,
-      images: [project.cover.src],
+      images: [shareImage.src],
     },
   };
 }
@@ -75,8 +83,8 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           className="relative flex min-h-[85svh] items-end overflow-hidden bg-ink text-cream"
         >
           <Image
-            src={project.cover.src}
-            alt={project.cover.alt}
+            src={(project.heroImage ?? project.cover).src}
+            alt={(project.heroImage ?? project.cover).alt}
             fill
             priority
             sizes="100vw"

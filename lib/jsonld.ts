@@ -34,7 +34,7 @@ export function creativeWorkJsonLd(project: Project) {
     name: project.name,
     description: project.seoDescription ?? project.summary,
     url: `${siteConfig.url}/work/${project.slug}`,
-    image: `${siteConfig.url}${project.cover.src}`,
+    image: `${siteConfig.url}${(project.heroImage ?? project.cover).src}`,
     creator: {
       "@type": "Organization",
       name: siteConfig.name,

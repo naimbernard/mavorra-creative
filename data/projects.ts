@@ -36,6 +36,8 @@ export interface Project {
   approach: string;
   result: string;
   cover: { src: string; alt: string };
+  /** Used for the case-study detail page's full-width hero background. Falls back to `cover` if omitted. */
+  heroImage?: { src: string; alt: string };
   gallery: { src: string; alt: string }[];
   featured: boolean;
 }
@@ -183,7 +185,14 @@ export const projects: Project[] = [
       "Mavorra Creative was brought on as an ongoing partner rather than for a single project — running continuous lead generation, repositioning the brand for target market segments, conducting market research to guide strategy, and producing ongoing content to support the sales pipeline.",
     result:
       "Bernard Builders is a 2-year retained partnership, with an extension already agreed following delivery against the agreed 2-year KPI targets. Mavorra Creative continues to run lead generation, brand positioning, market research and content creation as an ongoing growth partner.",
-    cover: { src: "/work/bernard-builders/cover.jpg", alt: "Bernard Builders growth marketing cover artwork, abstract composition (placeholder — pending real project asset)" },
+    cover: {
+      src: "/work/bernard-builders/cover.png",
+      alt: "Bernard Builders logo mark — a gold \"BB\" monogram inside a circular emblem on a black background",
+    },
+    heroImage: {
+      src: "/work/bernard-builders/hero.png",
+      alt: "Bernard Builders & Real Estate full gold logo lockup on a black background",
+    },
     gallery: [
       { src: "/work/bernard-builders/detail-1.jpg", alt: "Bernard Builders lead generation detail, abstract composition (placeholder — pending real project asset)" },
       { src: "/work/bernard-builders/detail-2.jpg", alt: "Bernard Builders brand positioning detail, abstract composition (placeholder — pending real project asset)" },
