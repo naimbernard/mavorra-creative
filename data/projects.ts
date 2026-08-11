@@ -170,7 +170,18 @@ export const projects: Project[] = [
       "We redesigned the website to better communicate Synergy Human Factors’ expertise and credibility, strengthened on-page SEO to improve search visibility, and developed marketing materials that gave the consultancy clearer, more consistent messaging across its client-facing touchpoints.",
     result:
       "Mavorra Creative helped Synergy Human Factors present a more professional, credible online presence, with improved search visibility and marketing materials better suited to a specialist consultancy audience.",
-    cover: { src: "/work/synergy-human-factors/cover.jpg", alt: "Synergy Human Factors website and marketing cover artwork, abstract composition" },
+    cover: {
+      src: "/work/synergy-human-factors/cover.png",
+      alt: "Synergy Human Factors logo — a dotted circular mark beside the wordmark \"Synergy Human Factors\" on white",
+      fit: "contain",
+      bg: "bg-white",
+    },
+    heroImage: {
+      src: "/work/synergy-human-factors/hero.png",
+      alt: "Synergy Human Factors logo — a dotted circular mark beside the wordmark \"Synergy Human Factors\" on white",
+      fit: "contain",
+      bg: "bg-white",
+    },
     gallery: [
       { src: "/work/synergy-human-factors/detail-1.jpg", alt: "Synergy Human Factors website design detail, abstract composition" },
       { src: "/work/synergy-human-factors/detail-2.jpg", alt: "Synergy Human Factors marketing materials detail, abstract composition" },
