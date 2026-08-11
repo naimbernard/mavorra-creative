@@ -85,7 +85,10 @@ export const projects: Project[] = [
       "We refined the brand’s marketing message around its key product strengths: sugar-free, sparkling, refreshing and naturally lemon-led. We improved the content direction, strengthened SEO wording, created clearer promotional angles and developed social media ideas designed to make the product easier to discover, understand and promote.",
     result:
       "Mavorra Creative helped shape stronger marketing angles for Killian’s Drink Soda, improving how the product could be presented online, promoted through content and positioned for customer attention.",
-    cover: { src: "/work/killians-drink-soda/cover.jpg", alt: "Killian’s Drink Soda marketing cover artwork, abstract composition" },
+    cover: {
+      src: "/work/killians-drink-soda/cover.jpg",
+      alt: "A can of Killian's Soda Zitron sparkling lemon soda surrounded by lemon slices, ice cubes and splashing water",
+    },
     gallery: [
       { src: "/work/killians-drink-soda/detail-1.jpg", alt: "Killian’s Drink Soda content direction detail, abstract composition" },
       { src: "/work/killians-drink-soda/detail-2.jpg", alt: "Killian’s Drink Soda social visibility detail, abstract composition" },
