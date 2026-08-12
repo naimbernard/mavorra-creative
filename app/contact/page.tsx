@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Container } from "@/components/ui/Container";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { siteConfig } from "@/data/site";
@@ -82,7 +83,9 @@ export default function ContactPage() {
           </dl>
         </div>
 
-        <ContactForm />
+        <Suspense fallback={null}>
+          <ContactForm />
+        </Suspense>
       </Container>
     </div>
   );

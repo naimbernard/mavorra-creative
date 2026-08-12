@@ -3,6 +3,12 @@
 // Affordable monthly marketing support tiers, shown in the homepage
 // "Packages" section. Reorder or edit tiers here — no component changes
 // needed.
+//
+// `price`/`period` are kept here for your own reference only — the site
+// intentionally doesn't display them. Every "Register interest" button
+// sends the visitor to /contact with their tier pre-filled in the form,
+// so pricing becomes a conversation on the call instead of a number
+// someone can bounce off of.
 // ---------------------------------------------------------------------------
 
 export interface Package {

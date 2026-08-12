@@ -32,11 +32,7 @@ export function Packages() {
               className="flex flex-col rounded-sm border border-ink/10 bg-cream p-7 shadow-[0_1px_0_rgba(22,21,19,0.04)] sm:p-8"
             >
               <p className="text-xs uppercase font-tracking-wide text-gold-dark">{pkg.name}</p>
-              <p className="mt-3 font-serif text-4xl leading-none text-ink">
-                {pkg.price}
-                <span className="ml-1 text-base font-sans text-ink/45">{pkg.period}</span>
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-ink/60">{pkg.audience}</p>
+              <p className="mt-3 font-serif text-2xl leading-snug text-ink">{pkg.audience}</p>
 
               <ul className="mt-6 flex flex-col gap-3 border-t border-ink/10 pt-6 text-sm text-ink/75">
                 {pkg.inclusions.map((item) => (
@@ -48,8 +44,13 @@ export function Packages() {
               </ul>
 
               <div className="mt-8 pt-2">
-                <Button href="/contact" variant="outline" tone="onLight" className="w-full">
-                  Get started
+                <Button
+                  href={`/contact?package=${pkg.id}`}
+                  variant="outline"
+                  tone="onLight"
+                  className="w-full"
+                >
+                  Register interest
                 </Button>
               </div>
             </motion.div>

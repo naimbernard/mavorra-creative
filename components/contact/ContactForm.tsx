@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/data/site";
+import { packages } from "@/data/packages";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 
 const countries = [
@@ -43,6 +45,9 @@ type Status = "idle" | "submitting" | "success" | "error";
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const searchParams = useSearchParams();
+  const selectedPackage = packages.find((p) => p.id === searchParams.get("package"));
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -162,7 +167,7 @@ export function ContactForm() {
           <select
             id="projectType"
             name="projectType"
-            defaultValue=""
+            defaultValue={selectedPackage ? "Marketing Buffet Package" : ""}
             className={inputClasses}
           >
             <option value="" disabled>
@@ -186,6 +191,11 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
+          defaultValue={
+            selectedPackage
+              ? `I'm interested in the ${selectedPackage.name} Marketing Buffet package — tell me more.`
+              : undefined
+          }
           className={`${inputClasses} resize-none`}
         />
       </div>
