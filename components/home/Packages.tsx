@@ -33,15 +33,9 @@ export function Packages() {
             >
               <p className="text-xs uppercase font-tracking-wide text-gold-dark">{pkg.name}</p>
               <p className="mt-3 font-serif text-2xl leading-snug text-ink">{pkg.audience}</p>
-
-              <ul className="mt-6 flex flex-col gap-3 border-t border-ink/10 pt-6 text-sm text-ink/75">
-                {pkg.inclusions.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-6 border-t border-ink/10 pt-6 text-sm leading-relaxed text-ink/75">
+                {pkg.description}
+              </p>
 
               <div className="mt-8 pt-2">
                 <Button
