@@ -33,12 +33,12 @@ export function RevealText({
       {words.map((word, i) => (
         <span
           key={`${word}-${i}`}
-          className="inline-block overflow-hidden align-bottom"
+          className="inline-block overflow-hidden align-bottom leading-[1.3]"
           aria-hidden="true"
         >
           <motion.span
             variants={wordReveal}
-            className={clsx("inline-block", wordClassName)}
+            className={clsx("inline-block leading-[1.3]", wordClassName)}
           >
             {word}
             {i !== words.length - 1 ? " " : ""}
