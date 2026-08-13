@@ -13,7 +13,7 @@ export const siteConfig = {
   url: "https://www.mavorracreative.com",
   description:
     "Mavorra Creative is a marketing company that helps businesses look trusted, professional and ready to grow — through branding, websites, campaign visuals, content, SEO and lead generation systems.",
-  email: "hello@mavorracreative.com",
+  email: "hustlebernard1@gmail.com",
   phone: "+44 7424 495918",
   whatsapp: "https://wa.me/447424495918",
   regions: ["United Kingdom", "Ghana", "United States"] as const,
