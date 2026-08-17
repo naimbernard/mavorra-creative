@@ -43,22 +43,25 @@ export async function POST(request: Request) {
   }
 
   // ---------------------------------------------------------------------
-  // Wire up Resend to actually deliver the enquiry:
-  //   1. npm install resend (already in package.json)
-  //   2. Create an API key at https://resend.com/api-keys
-  //   3. Add RESEND_API_KEY to your environment (.env.local and in the
-  //      Vercel project's Environment Variables)
-  //   4. Verify a sending domain in Resend, then update `from` below
-  // Until RESEND_API_KEY is set, submissions are logged server-side and the
-  // request still succeeds, so the form is fully testable in local dev.
+  // Delivers the enquiry via Resend. mavorracreative.com is verified as a
+  // sending domain, so `from` below can deliver to any recipient (not just
+  // Resend's sandbox restriction to the account owner's own address).
+  // Requires RESEND_API_KEY to be set (.env.local locally, and in the
+  // Vercel project's Environment Variables for production). Until it's
+  // set, submissions are logged server-side instead, so the form is still
+  // testable end-to-end in local dev without a real key.
   // ---------------------------------------------------------------------
   const apiKey = process.env.RESEND_API_KEY;
 
   if (apiKey) {
     try {
       const resend = new Resend(apiKey);
-      await resend.emails.send({
-        from: `${siteConfig.name} Website <onboarding@resend.dev>`, // replace with a verified sending domain
+      // resend.emails.send() resolves with { data, error } — it does NOT
+      // throw for API-level failures (e.g. sandbox sender restrictions,
+      // invalid domain), so those must be checked explicitly or a failed
+      // send gets silently reported to the visitor as a success.
+      const { error: sendError } = await resend.emails.send({
+        from: `${siteConfig.name} Website <hello@mavorracreative.com>`,
         to: siteConfig.email,
         replyTo: email,
         subject: `New project enquiry from ${name} (${country})`,
@@ -73,6 +76,14 @@ export async function POST(request: Request) {
           message,
         ].join("\n"),
       });
+
+      if (sendError) {
+        console.error("Resend send failed:", sendError);
+        return NextResponse.json(
+          { error: "Something went wrong sending your message. Please email us directly." },
+          { status: 502 }
+        );
+      }
     } catch (error) {
       console.error("Resend send failed:", error);
       return NextResponse.json(
@@ -89,6 +100,18 @@ export async function POST(request: Request) {
       projectType,
       message,
     });
+
+    // In production, a missing key means this enquiry is going nowhere —
+    // tell the visitor so they see the "email us instead" fallback rather
+    // than a false "Message sent" confirmation. In local dev, keep
+    // pretending success so the full form flow stays testable without a
+    // real API key.
+    if (process.env.NODE_ENV === "production") {
+      return NextResponse.json(
+        { error: "Something went wrong sending your message. Please email us directly." },
+        { status: 502 }
+      );
+    }
   }
 
   return NextResponse.json({ success: true });
