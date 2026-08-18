@@ -4,20 +4,6 @@ import { siteConfig } from "@/data/site";
 
 export const runtime = "nodejs";
 
-// TEMPORARY diagnostic — remove once RESEND_API_KEY delivery is confirmed
-// working in production. Never returns the full key, only whether it's
-// present in this runtime and a masked fingerprint to cross-check against
-// what was pasted into Vercel.
-export async function GET() {
-  const apiKey = process.env.RESEND_API_KEY;
-  return NextResponse.json({
-    present: Boolean(apiKey),
-    length: apiKey?.length ?? 0,
-    preview: apiKey ? `${apiKey.slice(0, 6)}...${apiKey.slice(-4)}` : null,
-    nodeEnv: process.env.NODE_ENV,
-  });
-}
-
 interface ContactPayload {
   name: string;
   email: string;
