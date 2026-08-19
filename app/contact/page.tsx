@@ -73,10 +73,6 @@ export default function ContactPage() {
               </dd>
             </div>
             <div>
-              <dt className="text-ink/40">Studio</dt>
-              <dd className="mt-1 text-ink/80">{siteConfig.address}</dd>
-            </div>
-            <div>
               <dt className="text-ink/40">Reach</dt>
               <dd className="mt-1 text-ink/80">{siteConfig.regionsTagline}</dd>
             </div>

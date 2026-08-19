@@ -146,9 +146,8 @@ export function Footer() {
           </div>
         </motion.div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-cream/10 pt-8 text-xs text-cream/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 border-t border-cream/10 pt-8 text-xs text-cream/40">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <p>{siteConfig.address}</p>
         </div>
       </Container>
     </footer>

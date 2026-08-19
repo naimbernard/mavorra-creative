@@ -18,7 +18,6 @@ export const siteConfig = {
   whatsapp: "https://wa.me/447424495918",
   regions: ["United Kingdom", "Ghana", "United States"] as const,
   regionsTagline: "Serving clients across the UK, Ghana & the US",
-  address: "71–75 Shelton Street, London, WC2H 9JQ, United Kingdom",
   social: [
     { label: "Instagram", href: "https://instagram.com/mavorracreative" },
     { label: "LinkedIn", href: "https://linkedin.com/company/mavorracreative" },

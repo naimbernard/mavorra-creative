@@ -90,8 +90,7 @@ export default function PrivacyPage() {
         <h2>Contact</h2>
         <p>
           Questions about this policy can be directed to{" "}
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> or{" "}
-          {siteConfig.address}.
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
         </p>
       </section>
     </LegalLayout>

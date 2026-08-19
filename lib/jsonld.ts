@@ -20,10 +20,6 @@ export function organizationJsonLd() {
     ],
     serviceType: services.map((s) => s.title),
     sameAs: siteConfig.social.map((s) => s.href),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address,
-    },
   };
 }
 
