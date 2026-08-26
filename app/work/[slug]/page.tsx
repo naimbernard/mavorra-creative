@@ -59,9 +59,10 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   const { next } = getAdjacentProjects(project.slug);
   const heroImg = project.heroImage ?? project.cover;
   const isContain = heroImg.fit === "contain";
-  // A light contain backdrop (e.g. a white logo) needs the sticky nav to
-  // switch to dark-on-light text, since the top of the hero is now light.
-  const heroHeaderTheme = isContain && heroImg.bg === "bg-white" ? "light" : "dark";
+  // A light/bright contain backdrop needs the sticky nav to switch to
+  // dark-on-light text, since the top of the hero is otherwise unmodified
+  // (no darkening gradient reaches that high).
+  const heroHeaderTheme = heroImg.navTheme ?? "dark";
 
   return (
     <>
@@ -168,20 +169,26 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           </Container>
 
           <Container className="grid grid-cols-1 gap-6 pb-24 sm:grid-cols-2 sm:pb-32">
-            {project.gallery.map((img) => (
-              <div
-                key={img.src}
-                className="relative aspect-[8/5] overflow-hidden rounded-sm bg-ink/5"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(min-width: 640px) 45vw, 90vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
+            {project.gallery.map((img) => {
+              const imgIsContain = img.fit === "contain";
+              return (
+                <div
+                  key={img.src}
+                  className={clsx(
+                    "relative aspect-[8/5] overflow-hidden rounded-sm",
+                    imgIsContain ? img.bg ?? "bg-black" : "bg-ink/5"
+                  )}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(min-width: 640px) 45vw, 90vw"
+                    className={imgIsContain ? "object-contain" : "object-cover"}
+                  />
+                </div>
+              );
+            })}
           </Container>
         </div>
 

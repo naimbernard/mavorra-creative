@@ -24,6 +24,14 @@ export interface ProjectImage {
   fit?: "cover" | "contain";
   /** Backdrop Tailwind class shown behind a "contain"-fit image. Defaults to "bg-black". */
   bg?: string;
+  /**
+   * When this image is used as a case-study hero, which text color the
+   * sticky nav bar should switch to over it (the nav sits directly on the
+   * unmodified top of the backdrop, with no darkening gradient). Defaults
+   * to "dark" (light/cream nav text) — set "light" (dark nav text) for any
+   * backdrop light or bright enough that cream text fails contrast.
+   */
+  navTheme?: "light" | "dark";
 }
 
 export interface Project {
@@ -51,7 +59,7 @@ export interface Project {
   cover: ProjectImage;
   /** Used for the case-study detail page's full-width hero background. Falls back to `cover` if omitted. */
   heroImage?: ProjectImage;
-  gallery: { src: string; alt: string }[];
+  gallery: ProjectImage[];
   featured: boolean;
 }
 
@@ -136,6 +144,7 @@ export const projects: Project[] = [
       alt: "AB Realty logo — an \"A/B\" monogram above the wordmark \"AB Realty, real estate agency\" on white",
       fit: "contain",
       bg: "bg-white",
+      navTheme: "light",
     },
     gallery: [
       { src: "/work/ab-realty/detail-1.jpg", alt: "AB Realty website interface detail, abstract composition" },
@@ -184,6 +193,7 @@ export const projects: Project[] = [
       alt: "Synergy Human Factors logo — a dotted circular mark beside the wordmark \"Synergy Human Factors\" on white",
       fit: "contain",
       bg: "bg-white",
+      navTheme: "light",
     },
     gallery: [
       { src: "/work/synergy-human-factors/detail-1.jpg", alt: "Synergy Human Factors website design detail, abstract composition" },
@@ -236,6 +246,65 @@ export const projects: Project[] = [
     gallery: [
       { src: "/work/bernard-builders/detail-1.jpg", alt: "Bernard Builders lead generation detail, abstract composition (placeholder — pending real project asset)" },
       { src: "/work/bernard-builders/detail-2.jpg", alt: "Bernard Builders brand positioning detail, abstract composition (placeholder — pending real project asset)" },
+    ],
+    featured: true,
+  },
+  {
+    slug: "chef-it-up-2-go",
+    name: "Chef It Up 2 Go",
+    client: "Chef It Up 2 Go",
+    location: "New Jersey, USA",
+    website: "chefitupkids.com",
+    region: "United States",
+    topLabel: "BRAND DESIGN · PRINT MARKETING · FOOD & BEVERAGE",
+    category: "Brand Design & Print Marketing",
+    seoTitle: "Chef It Up 2 Go — Brand & Print Design Case Study",
+    seoDescription:
+      "Premium brand design and a 1,000-piece print marketing run for Chef It Up 2 Go, a food brand in New Jersey — designed, produced and shipped ahead of schedule.",
+    services: [
+      "Brand design",
+      "Print marketing",
+      "Production & fulfillment",
+      "Deadline management",
+    ],
+    year: "2026",
+    resultHeadline: "1,000 print pieces designed, produced and delivered three days ahead of schedule",
+    highlight:
+      "Premium brand design and 1,000 print marketing pieces designed, produced and shipped to New Jersey — three days ahead of schedule.",
+    summary:
+      "Premium brand design and print marketing production for a food brand in New Jersey, delivered three days ahead of schedule.",
+    challenge:
+      "Chef It Up 2 Go needed premium brand design that spoke directly to its audience, plus a large physical print marketing run — 1,000 pieces — designed, produced and shipped to their office in New Jersey against a firm deadline.",
+    approach:
+      "We developed premium design work built around Chef It Up 2 Go's audience, then managed production and fulfillment for 1,000 physical print marketing pieces, coordinating design, print and shipping to meet a fixed delivery deadline.",
+    result:
+      "Mavorra Creative delivered the full brand design and print run three days ahead of schedule, with 1,000 pieces produced, packed and shipped to Chef It Up 2 Go's New Jersey office — reflecting our commitment to deadlines and client satisfaction.",
+    cover: {
+      src: "/work/chef-it-up-2-go/cover.jpg",
+      alt: "Chef It Up 2 Go print marketing flyer — \"Where little chefs cook up big fun!\" on a teal background",
+      fit: "contain",
+      bg: "bg-[#4cb3b8]",
+    },
+    heroImage: {
+      src: "/work/chef-it-up-2-go/hero.jpg",
+      alt: "Chef It Up 2 Go print marketing flyer — \"Where little chefs cook up big fun!\" on a teal background",
+      fit: "contain",
+      bg: "bg-[#4cb3b8]",
+      navTheme: "light",
+    },
+    gallery: [
+      {
+        src: "/work/chef-it-up-2-go/detail-1.jpg",
+        alt: "Chef It Up 2 Go print marketing flyer detail, black background",
+        fit: "contain",
+        bg: "bg-[#1c1c1c]",
+      },
+      {
+        src: "/work/chef-it-up-2-go/detail-2.jpg",
+        alt: "Chef It Up 2 Go print marketing flyer detail, light blue background",
+        fit: "contain",
+        bg: "bg-[#bbe0e6]",
+      },
     ],
     featured: true,
   },
