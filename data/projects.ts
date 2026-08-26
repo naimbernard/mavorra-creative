@@ -306,7 +306,7 @@ export const projects: Project[] = [
         bg: "bg-[#bbe0e6]",
       },
     ],
-    featured: true,
+    featured: false,
   },
 ];
 
