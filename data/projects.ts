@@ -109,6 +109,7 @@ export const projects: Project[] = [
     name: "AB Realty",
     client: "AB Realty",
     location: "Goa, India",
+    website: "abrealty.in",
     region: "India",
     topLabel: "WEB DESIGN · SOCIAL MEDIA · CUSTOM CRM · LEAD GENERATION",
     category: "Web Design & Lead Systems",
