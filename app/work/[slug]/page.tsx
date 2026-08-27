@@ -125,7 +125,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             {[
               { label: "Client", value: project.client },
               { label: "Location", value: project.location },
-              ...(project.website ? [{ label: "Website", value: project.website }] : []),
+              ...(project.website
+                ? [{ label: "Website", value: project.website, href: `https://${project.website}` }]
+                : []),
               { label: "Year", value: project.year },
               { label: "Services", value: project.services.join(", ") },
             ].map((item) => (
@@ -133,7 +135,20 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 <p className="text-xs uppercase font-tracking-wide text-ink/40">
                   {item.label}
                 </p>
-                <p className="mt-2 text-sm leading-snug text-ink/80">{item.value}</p>
+                <p className="mt-2 text-sm leading-snug text-ink/80">
+                  {"href" in item ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-gold-dark hover:underline"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    item.value
+                  )}
+                </p>
               </div>
             ))}
           </Container>

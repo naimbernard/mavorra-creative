@@ -69,6 +69,7 @@ export const projects: Project[] = [
     name: "Killian’s Drink Soda",
     client: "Killian’s Drink Soda",
     location: "Switzerland",
+    website: "drinksodazitron.com",
     region: "Switzerland",
     topLabel: "SEO & MARKETING IMPROVEMENTS · BEVERAGE BRAND",
     category: "SEO & Marketing",
