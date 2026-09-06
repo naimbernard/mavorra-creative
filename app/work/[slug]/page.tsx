@@ -185,21 +185,21 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
           <Container className="grid grid-cols-1 gap-6 pb-24 sm:grid-cols-2 sm:pb-32">
             {project.gallery.map((img) => {
-              const imgIsContain = img.fit === "contain";
+              // Sized to each image's own aspect ratio (not a fixed crop box)
+              // so nothing is ever cropped, on phone, tablet or desktop.
+              const ratio = img.width && img.height ? `${img.width} / ${img.height}` : "8 / 5";
               return (
                 <div
                   key={img.src}
-                  className={clsx(
-                    "relative aspect-[8/5] overflow-hidden rounded-sm",
-                    imgIsContain ? img.bg ?? "bg-black" : "bg-ink/5"
-                  )}
+                  className="relative overflow-hidden rounded-sm bg-ink/5"
+                  style={{ aspectRatio: ratio }}
                 >
                   <Image
                     src={img.src}
                     alt={img.alt}
                     fill
                     sizes="(min-width: 640px) 45vw, 90vw"
-                    className={imgIsContain ? "object-contain" : "object-cover"}
+                    className="object-cover"
                   />
                 </div>
               );

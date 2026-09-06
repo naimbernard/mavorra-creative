@@ -32,6 +32,15 @@ export interface ProjectImage {
    * backdrop light or bright enough that cream text fails contrast.
    */
   navTheme?: "light" | "dark";
+  /**
+   * Actual pixel dimensions of the file. Gallery images use these to render
+   * at their own true aspect ratio (no forced crop box), so every gallery
+   * image is fully visible — clear and uncropped — on phone, tablet and
+   * desktop alike. Not needed for cover/heroImage, which fill a fixed
+   * design-driven frame instead.
+   */
+  width?: number;
+  height?: number;
 }
 
 export interface Project {
@@ -102,20 +111,26 @@ export const projects: Project[] = [
       {
         src: "/work/killians-drink-soda/detail-1.jpg",
         alt: "A can of Killian's Soda Zitron surrounded by lemon slices and ice in a glass, close-up product shot",
+        width: 1229,
+        height: 1536,
       },
       {
         src: "/work/killians-drink-soda/detail-2.jpg",
         alt: "\"All on brand\" campaign ad — two women laughing over cans of Killian's Soda Zitron at an outdoor table",
+        width: 941,
+        height: 1672,
       },
       {
         src: "/work/killians-drink-soda/detail-3.jpg",
         alt: "\"All the zing, none of the sugar\" print ad for Killian's Soda Zitron on a white background",
-        fit: "contain",
-        bg: "bg-white",
+        width: 1122,
+        height: 1402,
       },
       {
         src: "/work/killians-drink-soda/detail-4.jpg",
         alt: "\"Ready for your next chill?\" retail fridge ad for Killian's Soda Zitron",
+        width: 1122,
+        height: 1402,
       },
     ],
     featured: true,
@@ -165,8 +180,18 @@ export const projects: Project[] = [
       navTheme: "light",
     },
     gallery: [
-      { src: "/work/ab-realty/detail-1.jpg", alt: "AB Realty website interface detail, abstract composition" },
-      { src: "/work/ab-realty/detail-2.jpg", alt: "AB Realty lead system detail, abstract composition" },
+      {
+        src: "/work/ab-realty/detail-1.jpg",
+        alt: "AB Realty website interface detail, abstract composition",
+        width: 1600,
+        height: 1000,
+      },
+      {
+        src: "/work/ab-realty/detail-2.jpg",
+        alt: "AB Realty lead system detail, abstract composition",
+        width: 1600,
+        height: 1000,
+      },
     ],
     featured: true,
   },
@@ -214,8 +239,18 @@ export const projects: Project[] = [
       navTheme: "light",
     },
     gallery: [
-      { src: "/work/synergy-human-factors/detail-1.jpg", alt: "Synergy Human Factors website design detail, abstract composition" },
-      { src: "/work/synergy-human-factors/detail-2.jpg", alt: "Synergy Human Factors marketing materials detail, abstract composition" },
+      {
+        src: "/work/synergy-human-factors/detail-1.jpg",
+        alt: "Synergy Human Factors website design detail, abstract composition",
+        width: 1600,
+        height: 1000,
+      },
+      {
+        src: "/work/synergy-human-factors/detail-2.jpg",
+        alt: "Synergy Human Factors marketing materials detail, abstract composition",
+        width: 1600,
+        height: 1000,
+      },
     ],
     featured: true,
   },
@@ -262,8 +297,18 @@ export const projects: Project[] = [
       fit: "contain",
     },
     gallery: [
-      { src: "/work/bernard-builders/detail-1.jpg", alt: "Bernard Builders lead generation detail, abstract composition (placeholder — pending real project asset)" },
-      { src: "/work/bernard-builders/detail-2.jpg", alt: "Bernard Builders brand positioning detail, abstract composition (placeholder — pending real project asset)" },
+      {
+        src: "/work/bernard-builders/detail-1.jpg",
+        alt: "Bernard Builders lead generation detail, abstract composition (placeholder — pending real project asset)",
+        width: 1600,
+        height: 1000,
+      },
+      {
+        src: "/work/bernard-builders/detail-2.jpg",
+        alt: "Bernard Builders brand positioning detail, abstract composition (placeholder — pending real project asset)",
+        width: 1600,
+        height: 1000,
+      },
     ],
     featured: true,
   },
@@ -314,14 +359,14 @@ export const projects: Project[] = [
       {
         src: "/work/chef-it-up-2-go/detail-1.jpg",
         alt: "Chef It Up 2 Go print marketing flyer detail, black background",
-        fit: "contain",
-        bg: "bg-[#1c1c1c]",
+        width: 1447,
+        height: 2048,
       },
       {
         src: "/work/chef-it-up-2-go/detail-2.jpg",
         alt: "Chef It Up 2 Go print marketing flyer detail, light blue background",
-        fit: "contain",
-        bg: "bg-[#bbe0e6]",
+        width: 1447,
+        height: 2048,
       },
     ],
     featured: false,
