@@ -99,8 +99,24 @@ export const projects: Project[] = [
       alt: "A can of Killian's Soda Zitron sparkling lemon soda surrounded by lemon slices, ice cubes and splashing water",
     },
     gallery: [
-      { src: "/work/killians-drink-soda/detail-1.jpg", alt: "Killian’s Drink Soda content direction detail, abstract composition" },
-      { src: "/work/killians-drink-soda/detail-2.jpg", alt: "Killian’s Drink Soda social visibility detail, abstract composition" },
+      {
+        src: "/work/killians-drink-soda/detail-1.jpg",
+        alt: "A can of Killian's Soda Zitron surrounded by lemon slices and ice in a glass, close-up product shot",
+      },
+      {
+        src: "/work/killians-drink-soda/detail-2.jpg",
+        alt: "\"All on brand\" campaign ad — two women laughing over cans of Killian's Soda Zitron at an outdoor table",
+      },
+      {
+        src: "/work/killians-drink-soda/detail-3.jpg",
+        alt: "\"All the zing, none of the sugar\" print ad for Killian's Soda Zitron on a white background",
+        fit: "contain",
+        bg: "bg-white",
+      },
+      {
+        src: "/work/killians-drink-soda/detail-4.jpg",
+        alt: "\"Ready for your next chill?\" retail fridge ad for Killian's Soda Zitron",
+      },
     ],
     featured: true,
   },
