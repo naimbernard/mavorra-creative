@@ -18,6 +18,10 @@ export interface Package {
   period: string;
   audience: string;
   description: string;
+  /** Pre-selected in the contact form's "Project type" dropdown. Defaults to "Marketing Buffet Package". */
+  projectType?: string;
+  /** Pre-filled in the contact form's message field. Defaults to "I'm interested in the {name} Marketing Buffet package — tell me more." */
+  inquiryMessage?: string;
 }
 
 export const packages: Package[] = [
@@ -56,5 +60,17 @@ export const packages: Package[] = [
     audience: "For businesses that need regular content, brand polish and stronger strategic support.",
     description:
       "Our most complete monthly package — regular content, brand polish and ongoing strategic support.",
+  },
+  {
+    id: "consultation",
+    name: "Consultation",
+    price: "Custom",
+    period: "",
+    audience: "For businesses that want an expert deep dive before committing to a package or project.",
+    description:
+      "A focused, one-on-one session to dig into your brand, market position and growth goals — you walk away with clear, actionable next steps.",
+    projectType: "Consultation",
+    inquiryMessage:
+      "I'm interested in booking a consultation — a deep dive into my business — tell me more.",
   },
 ];

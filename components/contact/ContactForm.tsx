@@ -35,6 +35,7 @@ const projectTypes = [
   "SEO Improvements",
   "Lead Generation / CRM",
   "Marketing Buffet Package",
+  "Consultation",
   "Other",
 ];
 
@@ -168,7 +169,9 @@ export function ContactForm() {
           <select
             id="projectType"
             name="projectType"
-            defaultValue={selectedPackage ? "Marketing Buffet Package" : ""}
+            defaultValue={
+              selectedPackage ? selectedPackage.projectType ?? "Marketing Buffet Package" : ""
+            }
             className={inputClasses}
           >
             <option value="" disabled>
@@ -194,7 +197,8 @@ export function ContactForm() {
           rows={5}
           defaultValue={
             selectedPackage
-              ? `I'm interested in the ${selectedPackage.name} Marketing Buffet package — tell me more.`
+              ? selectedPackage.inquiryMessage ??
+                `I'm interested in the ${selectedPackage.name} Marketing Buffet package — tell me more.`
               : undefined
           }
           className={`${inputClasses} resize-none`}
