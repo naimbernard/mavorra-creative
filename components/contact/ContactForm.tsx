@@ -33,6 +33,7 @@ const projectTypes = [
   "Campaign Visuals",
   "Social Media Content",
   "SEO Improvements",
+  "Paid Marketing",
   "Lead Generation / CRM",
   "Marketing Buffet Package",
   "Consultation",

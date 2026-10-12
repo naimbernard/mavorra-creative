@@ -93,8 +93,21 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "lead-generation",
+    id: "paid-marketing",
     number: "07",
+    title: "Paid Marketing",
+    description:
+      "Performance-driven paid campaigns across search and social — built to turn ad spend into measurable leads and sales, not just impressions.",
+    capabilities: [
+      "Paid search (Google Ads)",
+      "Paid social (Meta & Instagram)",
+      "Campaign setup & targeting",
+      "Budget management & reporting",
+    ],
+  },
+  {
+    id: "lead-generation",
+    number: "08",
     title: "Lead Generation Systems",
     description:
       "Enquiry-focused systems that turn visibility into leads — landing pages, forms and follow-up flows designed around how the business actually sells.",
@@ -107,7 +120,7 @@ export const services: Service[] = [
   },
   {
     id: "crm",
-    number: "08",
+    number: "09",
     title: "Custom CRM / Enquiry Systems",
     description:
       "Simple, custom-built systems for managing enquiries, listings and customer requirements — built around the business, not a bolted-on plugin.",
