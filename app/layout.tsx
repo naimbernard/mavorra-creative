@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { fraunces, manrope } from "@/lib/fonts";
 import { siteConfig } from "@/data/site";
 import { Header } from "@/components/layout/Header";
@@ -124,6 +125,7 @@ gtag('config', 'G-4S6ZY9GYLJ');`}
           </main>
           <Footer />
         </SmoothScrollProvider>
+        <Analytics />
       </body>
     </html>
   );
