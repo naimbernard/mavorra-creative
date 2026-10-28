@@ -14,8 +14,8 @@ export const siteConfig = {
   description:
     "Mavorra Creative is a marketing company that helps businesses look trusted, professional and ready to grow — through branding, websites, campaign visuals, content, SEO and lead generation systems.",
   email: "hello@mavorracreative.com",
-  phone: "+44 7424 495918",
-  whatsapp: "https://wa.me/447424495918",
+  phone: "+44 7466 965911",
+  whatsapp: "https://wa.me/447466965911",
   regions: ["United Kingdom", "Ghana", "United States"] as const,
   regionsTagline: "Serving clients across the UK, Ghana & the US",
   social: [
