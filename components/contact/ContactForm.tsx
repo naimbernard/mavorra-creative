@@ -32,6 +32,7 @@ const projectTypes = [
   "Website Design",
   "Campaign Visuals",
   "Social Media Content",
+  "Professional Videography",
   "SEO Improvements",
   "Paid Marketing",
   "Lead Generation / CRM",

@@ -28,7 +28,7 @@ export function Services() {
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-ink/65">
               Custom marketing services selected around your business need —
-              branding, websites, campaign visuals, content, strategy and SEO.
+              branding, websites, campaign visuals, content, videography, strategy and SEO.
             </p>
           </div>
           <div className="rounded-sm border border-ink/10 bg-ink/[0.03] p-6 sm:p-7">
