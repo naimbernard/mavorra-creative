@@ -67,8 +67,21 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "strategy",
+    id: "videography",
     number: "05",
+    title: "Professional Videography",
+    description:
+      "Professionally shot and edited video — brand films, promotional content and social-ready clips that show the business at its best and hold attention.",
+    capabilities: [
+      "Brand & promotional films",
+      "Social media video & reels",
+      "Filming & on-location production",
+      "Editing & post-production",
+    ],
+  },
+  {
+    id: "strategy",
+    number: "06",
     title: "Marketing Strategy",
     description:
       "Clear, business-first marketing direction — positioning, messaging and campaign planning built around growth and customer attention, not trends.",
@@ -81,7 +94,7 @@ export const services: Service[] = [
   },
   {
     id: "seo",
-    number: "06",
+    number: "07",
     title: "SEO Improvements",
     description:
       "Practical search and visibility improvements — content, structure and wording refined so the right customers can actually find the business.",
@@ -94,7 +107,7 @@ export const services: Service[] = [
   },
   {
     id: "paid-marketing",
-    number: "07",
+    number: "08",
     title: "Paid Marketing",
     description:
       "Performance-driven paid campaigns across search and social — built to turn ad spend into measurable leads and sales, not just impressions.",
@@ -107,7 +120,7 @@ export const services: Service[] = [
   },
   {
     id: "lead-generation",
-    number: "08",
+    number: "09",
     title: "Lead Generation Systems",
     description:
       "Enquiry-focused systems that turn visibility into leads — landing pages, forms and follow-up flows designed around how the business actually sells.",
@@ -120,7 +133,7 @@ export const services: Service[] = [
   },
   {
     id: "crm",
-    number: "09",
+    number: "10",
     title: "Custom CRM / Enquiry Systems",
     description:
       "Simple, custom-built systems for managing enquiries, listings and customer requirements — built around the business, not a bolted-on plugin.",

@@ -4,6 +4,7 @@ const ITEMS = [
   "SEO",
   "Lead Generation",
   "Social Media",
+  "Videography",
   "United Kingdom",
   "Ghana",
   "United States",

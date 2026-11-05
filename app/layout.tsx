@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     "marketing agency Ghana",
     "marketing agency Accra",
     "social media content agency",
+    "professional videography",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
