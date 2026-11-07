@@ -147,6 +147,24 @@ export function Footer() {
         </motion.div>
 
         <div className="mt-16 border-t border-cream/10 pt-8 text-xs text-cream/40">
+          <div className="mb-6 flex items-start gap-3 text-sm leading-relaxed text-cream/60">
+            {/* Inline SVG rather than the flag emoji, which shows as letters on Windows. */}
+            <svg
+              viewBox="0 0 6 3"
+              className="mt-1 h-3.5 w-7 shrink-0 ring-1 ring-cream/20"
+              role="img"
+              aria-label="Flag of Palestine"
+            >
+              <rect width="6" height="1" fill="#000" />
+              <rect y="1" width="6" height="1" fill="#fff" />
+              <rect y="2" width="6" height="1" fill="#149954" />
+              <path d="M0 0 L2 1.5 L0 3 Z" fill="#e4312b" />
+            </svg>
+            <p>
+              <span className="text-cream/80">In solidarity with the people of Palestine.</span>{" "}
+              We believe in human dignity, freedom, safety and the protection of civilian lives.
+            </p>
+          </div>
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
         </div>
       </Container>
