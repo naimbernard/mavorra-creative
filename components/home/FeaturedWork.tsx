@@ -1,19 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { projects } from "@/data/projects";
 import { fadeUp, viewportOnce } from "@/lib/motion";
-import { useIsDesktopViewport, usePrefersReducedMotion } from "@/lib/hooks";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const gallery = projects.filter((p) => p.featured);
 
@@ -23,18 +17,16 @@ function CardContent({ project, index }: { project: (typeof gallery)[number]; in
   return (
     <>
       <div
-        data-card-image
         className={clsx(
           "absolute inset-0 overflow-hidden rounded-sm",
           isContain && (project.cover.bg ?? "bg-black")
         )}
-        style={{ clipPath: "inset(0 0 0 0)" }}
       >
         <Image
           src={project.cover.src}
           alt={project.cover.alt}
           fill
-          sizes="(min-width: 1280px) 36vw, (min-width: 768px) 46vw, 90vw"
+          sizes="(min-width: 768px) 46vw, 90vw"
           className={isContain ? "object-contain" : "object-cover"}
           priority={index === 0}
         />
@@ -65,107 +57,19 @@ function CardContent({ project, index }: { project: (typeof gallery)[number]; in
 }
 
 export function FeaturedWork() {
-  const isDesktop = useIsDesktopViewport(768);
-  const reducedMotion = usePrefersReducedMotion();
-  const pinRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
-
-  useEffect(() => {
-    if (!isDesktop || reducedMotion) return;
-    if (!pinRef.current || !trackRef.current) return;
-
-    const ctx = gsap.context(() => {
-      const track = trackRef.current!;
-      const pin = pinRef.current!;
-
-      const getDistance = () => track.scrollWidth - window.innerWidth;
-
-      const tween = gsap.to(track, {
-        x: () => -getDistance(),
-        ease: "none",
-        scrollTrigger: {
-          trigger: pin,
-          start: "top top",
-          end: () => `+=${getDistance()}`,
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      cardRefs.current.forEach((card) => {
-        if (!card) return;
-        const img = card.querySelector<HTMLElement>("[data-card-image]");
-        if (!img) return;
-        gsap.fromTo(
-          img,
-          { clipPath: "inset(0 14% 0 14%)", scale: 1.12 },
-          {
-            clipPath: "inset(0 0% 0 0%)",
-            scale: 1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: card,
-              containerAnimation: tween,
-              start: "left 88%",
-              end: "left 30%",
-              scrub: true,
-            },
-          }
-        );
-      });
-
-      ScrollTrigger.refresh();
-    }, pinRef);
-
-    return () => ctx.revert();
-  }, [isDesktop, reducedMotion]);
-
   return (
     <section data-header-theme="dark" className="relative bg-ink text-cream">
-      {/* Desktop: pinned horizontal scroll gallery */}
-      {isDesktop && !reducedMotion ? (
-        <div ref={pinRef} className="relative flex h-[100svh] flex-col overflow-hidden bg-ink">
-          <Container className="relative z-10 shrink-0 pb-8 pt-28 lg:pb-10 lg:pt-32">
-            <SectionHeading
-              eyebrow="Featured work"
-              title="Selected case studies"
-              tone="onDark"
-            />
-          </Container>
-          <div className="relative min-h-0 flex-1 overflow-hidden">
-            <div
-              ref={trackRef}
-              className="absolute inset-0 flex h-full items-center gap-7 pl-[6vw] pr-[10vw] will-change-transform"
-            >
-              {gallery.map((project, i) => (
-                <div
-                  key={project.slug}
-                  ref={(el) => {
-                    cardRefs.current[i] = el;
-                  }}
-                  className="relative h-[calc(100%-2rem)] w-[62vw] shrink-0 overflow-hidden rounded-sm bg-ink/40 lg:w-[40vw] xl:w-[34vw]"
-                >
-                  <CardContent project={project} index={i} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      ) : (
-        // Mobile / reduced-motion: vertical scroll-snap stack, native scroll
-        <div className="py-20 sm:py-28">
-          <Container>
-            <SectionHeading
-              eyebrow="Featured work"
-              title="Selected case studies"
-              tone="onDark"
-              className="mb-14 sm:mb-16"
-            />
-          </Container>
-          <div className="flex snap-y snap-mandatory flex-col gap-6 px-5 sm:px-8">
+      {/* Plain vertical layout on every screen size: stacked cards on phones,
+          a 2-column grid from tablet up. No horizontal scrolling. */}
+      <div className="py-20 sm:py-28">
+        <Container>
+          <SectionHeading
+            eyebrow="Featured work"
+            title="Selected case studies"
+            tone="onDark"
+            className="mb-14 sm:mb-16"
+          />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
             {gallery.map((project, i) => (
               <motion.div
                 key={project.slug}
@@ -173,14 +77,14 @@ export function FeaturedWork() {
                 initial="hidden"
                 whileInView="show"
                 viewport={viewportOnce}
-                className="relative h-[70vh] w-full shrink-0 snap-center overflow-hidden rounded-sm"
+                className="relative h-[70vh] w-full overflow-hidden rounded-sm md:h-auto md:aspect-[4/5] xl:aspect-[5/4]"
               >
                 <CardContent project={project} index={i} />
               </motion.div>
             ))}
           </div>
-        </div>
-      )}
+        </Container>
+      </div>
     </section>
   );
 }
