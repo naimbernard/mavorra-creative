@@ -255,64 +255,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "bernard-builders",
-    name: "Bernard Builders",
-    client: "Bernard Builders",
-    location: "Cape Coast, Ghana",
-    website: "bernard-builders.com",
-    region: "Ghana",
-    topLabel: "BUSINESS DEVELOPMENT & GROWTH MARKETING · CONSTRUCTION",
-    category: "Business Development & Growth Marketing",
-    seoTitle: "Bernard Builders — Construction Brand Growth Case Study",
-    seoDescription:
-      "An ongoing growth marketing partnership with Bernard Builders, a construction business in Cape Coast, Ghana — lead generation, positioning, market research.",
-    services: [
-      "Business development",
-      "Lead generation",
-      "Brand positioning",
-      "Market research",
-      "Content creation",
-    ],
-    year: "2025",
-    resultHeadline: "An ongoing growth partnership, extended after hitting KPI targets",
-    resultLabel: "Status",
-    highlight:
-      "An ongoing growth partnership running lead generation, brand positioning and content for a construction business in Ghana.",
-    summary:
-      "An ongoing business development and growth marketing partnership for a construction business in Cape Coast, Ghana.",
-    challenge:
-      "Bernard Builders needed a structured growth engine rather than one-off marketing — consistent lead flow, a clearer market position, and content that supported a longer sales cycle in the construction and builders space.",
-    approach:
-      "Mavorra Creative was brought on as an ongoing partner rather than for a single project — running continuous lead generation, repositioning the brand for target market segments, conducting market research to guide strategy, and producing ongoing content to support the sales pipeline.",
-    result:
-      "Bernard Builders is a 2-year retained partnership, with an extension already agreed following delivery against the agreed 2-year KPI targets. Mavorra Creative continues to run lead generation, brand positioning, market research and content creation as an ongoing growth partner.",
-    cover: {
-      src: "/work/bernard-builders/cover.png",
-      alt: "Bernard Builders logo mark — a gold \"BB\" monogram inside a circular emblem on a black background",
-      fit: "contain",
-    },
-    heroImage: {
-      src: "/work/bernard-builders/hero.png",
-      alt: "Bernard Builders & Real Estate full gold logo lockup on a black background",
-      fit: "contain",
-    },
-    gallery: [
-      {
-        src: "/work/bernard-builders/detail-1.jpg",
-        alt: "Bernard Builders lead generation detail, abstract composition (placeholder — pending real project asset)",
-        width: 1600,
-        height: 1000,
-      },
-      {
-        src: "/work/bernard-builders/detail-2.jpg",
-        alt: "Bernard Builders brand positioning detail, abstract composition (placeholder — pending real project asset)",
-        width: 1600,
-        height: 1000,
-      },
-    ],
-    featured: true,
-  },
-  {
     slug: "chef-it-up-2-go",
     name: "Chef It Up 2 Go",
     client: "Chef It Up 2 Go",
