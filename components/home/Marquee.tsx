@@ -15,7 +15,7 @@ export function Marquee() {
   const items = [...ITEMS, ...ITEMS];
 
   return (
-    <section data-header-theme="light" className="overflow-hidden bg-cream py-8 sm:py-10">
+    <section data-header-theme="light" className="bg-cream py-8 sm:py-10">
       <div className="group overflow-hidden border-y border-ink/10 py-5 mask-fade-x">
         <div className="flex w-max animate-marquee gap-10 group-hover:[animation-play-state:paused] sm:gap-14">
           {items.map((item, i) => (
