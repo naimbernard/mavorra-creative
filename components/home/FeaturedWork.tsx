@@ -26,7 +26,7 @@ function CardContent({ project, index }: { project: (typeof gallery)[number]; in
           src={project.cover.src}
           alt={project.cover.alt}
           fill
-          sizes="(min-width: 768px) 46vw, 90vw"
+          sizes="(min-width: 1024px) 31vw, (min-width: 768px) 92vw, 90vw"
           className={isContain ? "object-contain" : "object-cover"}
           priority={index === 0}
         />
@@ -60,7 +60,7 @@ export function FeaturedWork() {
   return (
     <section data-header-theme="dark" className="relative bg-ink text-cream">
       {/* Plain vertical layout on every screen size: stacked cards on phones,
-          a 2-column grid from tablet up. No horizontal scrolling. */}
+          a 2-column grid on tablets and 3 columns from laptop up. No horizontal scrolling. */}
       <div className="py-20 sm:py-28">
         <Container>
           <SectionHeading
@@ -69,7 +69,7 @@ export function FeaturedWork() {
             tone="onDark"
             className="mb-14 sm:mb-16"
           />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {gallery.map((project, i) => (
               <motion.div
                 key={project.slug}
@@ -77,7 +77,13 @@ export function FeaturedWork() {
                 initial="hidden"
                 whileInView="show"
                 viewport={viewportOnce}
-                className="relative h-[70vh] w-full overflow-hidden rounded-sm md:h-auto md:aspect-[4/5] xl:aspect-[5/4]"
+                className={clsx(
+                  "relative h-[70vh] w-full overflow-hidden rounded-sm md:h-auto",
+                  // An odd last card spans the full row on 2-column tablets.
+                  gallery.length % 2 === 1 && i === gallery.length - 1
+                    ? "md:col-span-2 md:aspect-[16/9] lg:col-span-1 lg:aspect-[4/5]"
+                    : "md:aspect-[4/5]"
+                )}
               >
                 <CardContent project={project} index={i} />
               </motion.div>
